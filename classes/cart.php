@@ -91,6 +91,13 @@ class cart
 		$result=$this->db->select($query);
 		return $result;
 	}
+	public function del_data_compare($customer_id){
+
+		$sId= session_id();
+		$query ="DELETE FROM tbl_compare WHERE customer_id='$customer_id'";
+		$result=$this->db->delete($query);
+		return $result;
+	}
 		public function check_cart(){
 		$sId= session_id();
 		$query ="SELECT * FROM tbl_cart WHERE sId='$sId'";

@@ -33,7 +33,7 @@
 <!DOCTYPE HTML>
 
 <head>
-    <title>Store Website</title>
+    <title>Đồ gỗ Điệp Hoa</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -87,8 +87,9 @@
                 <?php
 
                 if(isset($_GET['customer_id'])){
-
+                        $customer_id=$_GET['customer_id'];
                         $delcartcs=$ct->del_data_cart();
+                        $delcomparecs=$ct->del_data_compare($customer_id);
                     Session::destroy();
 
                 }
@@ -115,9 +116,9 @@
             <ul  id="dc_mega-menu-orange" class="dc_mm-orange" style="background: linear-gradient(to bottom, #ff7100 55%,#640000 100%)">   
                 <li><a style="font-weight: bold;" href="index.php">Trang chủ</a></li>
                 <li><a style="font-weight: bold;" href="products.php">Sản phẩm</a> </li>
-                <li><a style="font-weight: bold;" href="topbrands.php">Loại sản phẩm hot</a></li>
                 <li><a style="font-weight: bold;" >Loại sản phẩm</a>
                     <ul style="background-color:white ;color: black;font-size: 16px;">
+                        <li><a style="font-weight: bold;color:#ff7100 ;" href="topbrands.php">Loại sản phẩm hot</a></li>
                     <?php 
 
                     $get_all_category= $cat->show_category_FE();
@@ -125,6 +126,7 @@
                         while($result_allcat= $get_all_category->fetch_assoc()){
 
                     ?>
+                    
                     <li>
                     <a style="font-weight: bold;color:#ff7100 ;" href="productbycat.php?catid=<?php echo $result_allcat['catId']?>"><?php echo $result_allcat['catName']?></a>
                     </li>

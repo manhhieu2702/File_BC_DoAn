@@ -73,7 +73,18 @@
                             <!-- <a href="?wlist=<?php echo $result_details['productId']?>" class="buysubmit">Thêm Wishlist</a> -->
                             <!-- <a href="?compare=<?php echo $result_details['productId']?>" class="buysubmit">So sánh</a> -->
                             <input type="hidden" name="productid" value="<?php echo $result_details['productId'] ?>" />
-                            <input type="submit" class="buysubmit" name="compare" value="So sánh" style="background-color:green;" />
+                            
+                            <?php 
+
+                            $login_check =Session::get('customer_login');
+                            if($login_check){
+                                    echo '<input type="submit" class="buysubmit" name="compare" value="So sánh" style="background-color:green;" />';
+                                    echo '<input type="submit" class="buysubmit" name="wishlist" value="Thêm vào wishlist" style="background-color:green; margin : 0 10px" />';
+                                }else{
+                                    echo ' ';
+                                }
+                
+                            ?>
                             <?php 
 
                                 if(isset($insertCompare)){
