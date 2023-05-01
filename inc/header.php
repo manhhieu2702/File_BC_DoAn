@@ -3,6 +3,7 @@
 
     include_once 'lib/session.php';
     Session::init();
+    ob_start();
 ?>
 <?php 
 
@@ -62,12 +63,12 @@
     <div class="wrap">
         <div class="header_top">
             <div class="logo">
-                <a href=" index.php"><img src="images/logo2.png" alt="" style="height: 200px; width: 450px"></a>
+                <a href=" index.php"><img src="images/logo3.png" alt="" style="height: 150px; width: 300px ; margin-left: 80px;"></a>
             </div>
             <div class="header_top_right">
                 <div class="search_box">
                     <form action="search.php" method="POST">
-                        <input type="text" placeholder="Tìm kiếm sản phẩm" name="tukhoa"><input type="submit"
+                        <input  type="text" placeholder="Tìm kiếm sản phẩm" name="tukhoa"><input style="background-color:#ff7100 ;" type="submit"
                             value="Tìm kiếm" name="search_product">
                     </form>
                 </div>
@@ -111,15 +112,33 @@
             <div class="clear"></div>
         </div>
         <div class="menu">
-            <ul  id="dc_mega-menu-orange" class="dc_mm-orange">
-                <li><a href="index.php">Trang chủ</a></li>
-                <li><a href="products.php">Sản phẩm</a> </li>
-                <li><a href="topbrands.php">Loại sản phẩm hot</a></li>
+            <ul  id="dc_mega-menu-orange" class="dc_mm-orange" style="background: linear-gradient(to bottom, #ff7100 55%,#640000 100%)">   
+                <li><a style="font-weight: bold;" href="index.php">Trang chủ</a></li>
+                <li><a style="font-weight: bold;" href="products.php">Sản phẩm</a> </li>
+                <li><a style="font-weight: bold;" href="topbrands.php">Loại sản phẩm hot</a></li>
+                <li><a style="font-weight: bold;" >Loại sản phẩm</a>
+                    <ul style="background-color:white ;color: black;font-size: 16px;">
+                    <?php 
+
+                    $get_all_category= $cat->show_category_FE();
+                    if($get_all_category){
+                        while($result_allcat= $get_all_category->fetch_assoc()){
+
+                    ?>
+                    <li>
+                    <a style="font-weight: bold;color:#ff7100 ;" href="productbycat.php?catid=<?php echo $result_allcat['catId']?>"><?php echo $result_allcat['catName']?></a>
+                    </li>
+                    <?php 
+                         }
+                        }
+                        ?>
+                    </ul>
+                </li>
                 <?php
 
                 $check_cart=$ct->check_cart();
                 if($check_cart==true){
-                    echo '<li><a href="cart.php">Giỏ hàng</a></li>';
+                    echo '<li><a style="font-weight: bold;" href="cart.php">Giỏ hàng</a></li>';
                 }else{
                     echo '';
                 }
@@ -129,13 +148,23 @@
                 $customer_id=Session::get('customer_id');
                 $check_order=$ct->check_order($customer_id);
                 if($check_order==true){
-                    echo '<li><a href="orderdetails.php">Đơn đặt hàng</a></li>';
+                    echo '<li><a style="font-weight: bold;" href="orderdetails.php">Đơn đặt hàng</a></li>';
                 }else{
                     echo '';
                 }
 
                 ?>
-                <li><a href="contact.php">Liên hệ</a> </li>
+                <?php 
+
+                        $logincheck =Session::get('customer_login');
+                        if($logincheck){
+                               echo '<li><a style="font-weight: bold;" href="compare.php">So sánh</a> </li>';
+                        }
+
+
+                ?>
+                
+                <li><a style="font-weight: bold;" href="contact.php">Liên hệ</a> </li>
                 <?php 
 
                 $logincheck =Session::get('customer_login');

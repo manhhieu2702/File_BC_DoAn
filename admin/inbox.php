@@ -30,7 +30,7 @@ $ct= new cart();
 
 ?>
 <div class="grid_10">
-    <div class="box round first grid">
+    <div class="box round first grid" style="background-color: #d19405;border-radius:10px ;">
         <h2>Yêu cầu gửi đến</h2>
         <div class="block">
             <?php 
@@ -45,17 +45,19 @@ $ct= new cart();
                 echo $del_shifted;
             }
             ?>
-            <table class="data display datatable" id="example">
+            <table class="data display datatable" id="example" style="color: black;font-weight: bold;">
                 <thead>
                     <tr>
                         <th width="5%">STT</th>
-                        <th width="15%">Ngày-giờ đặt</th>
+                        <th width="12.5%">Ngày-giờ đặt</th>
+                        <th width="5%">Mã đơn</th>
                         <th width="15%">Sản phẩm</th>
-                        <th width="15%">Số lượng</th>
-                        <th width="15%">Giá</th>
+                        <th width="5%">Số lượng</th>
+                        <th width="12.5%">Giá</th>
                         <th width="10">Mã khách hàng</th>
                         <th width="15%">Địa chỉ</th>
-                        <th width="10%">Thao tác</th>
+                        <th width="10%">Quản lý đơn</th>
+                        <th width="10%">In đơn hàng</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -71,30 +73,31 @@ $ct= new cart();
 
                     ?>
                     <tr class="odd gradeX">
-                        <td><?php echo $i?></td>
-                        <td><?php echo $fm->formatDate($result['date_order'])?></td>
-                        <td><?php echo $result['productName'] ?></td>
-                        <td><?php echo $result['quantity'] ?></td>
-                        <td><?php echo $fm->format_currency($result['price']) .' '.'VNĐ'?></td>
-                        <td><?php echo $result['customer_id'] ?></td>
-                        <td><a style="font-style:italic ;" href="customer.php?customerid=<?php echo $result['customer_id']?>">Xem thông tin</a></td>
-                        <td>
+                        <td style="vertical-align: middle;"><?php echo $i?></td>
+                        <td style="vertical-align: middle;"><?php echo $fm->formatDate($result['date_order'])?></td>
+                        <td style="vertical-align: middle;"><?php echo $result['id'] ?></td>
+                        <td style="vertical-align: middle;"><?php echo $result['productName'] ?></td>
+                        <td style="vertical-align: middle;"><?php echo $result['quantity'] ?></td>
+                        <td style="vertical-align: middle;"><?php echo $fm->format_currency($result['price']) .' '.'VNĐ'?></td>
+                        <td style="vertical-align: middle;"><?php echo $result['customer_id'] ?></td>
+                        <td style="vertical-align: middle; padding: 12px 0px"><a style="border: none;color: white; background-color: blueviolet; padding: 5px 10px; border-radius: 5px;" style="font-style:italic ;" href="customer.php?customerid=<?php echo $result['customer_id']?>">Xem thông tin khách</a></td>
+                        <td style="vertical-align: middle;">
                             <?php
                             if($result['status']==0){
                             ?>
-                            <a style="color: red;" href="?shiftid=<?php echo $result['id'] ?>&price=<?php echo $result['price'] ?>&time=<?php echo $result['date_order'] ?> "> Đang chờ xử lý </a>
+                            <a style="border: none;color: red;background-color: wheat; padding: 5px 10px; border-radius: 5px;" href="?shiftid=<?php echo $result['id'] ?>&price=<?php echo $result['price'] ?>&time=<?php echo $result['date_order'] ?> "> Đang chờ xử lý </a>
 
 
                         <?php 
                         }elseif($result['status']==1){
                         ?>
-                            <a style="color: yellow;" href="?shiftid=<?php echo $result['id'] ?>&price=<?php echo $result['price'] ?>&time=<?php echo $result['date_order'] ?> "> Đã xử lý </a>
+                            <a style="border: none;color: black;background-color: wheat; padding: 5px 10px; border-radius: 5px;" href="?shiftid=<?php echo $result['id'] ?>&price=<?php echo $result['price'] ?>&time=<?php echo $result['date_order'] ?> "> Đã xử lý </a>
 
 
                         <?php 
                         }elseif($result['status']==2){
                         ?>
-                        <a style="color: green;" onclick="return confirm('Đơn hàng đã được vận chuyển. Nhấn OK để xóa đơn khỏi danh sách.')" href="?delid=<?php echo $result['id'] ?>&price=<?php echo $result['price'] ?>&time=<?php echo $result['date_order'] ?>">Xóa đơn đã giao </a>
+                        <a style="border: none;color: green;background-color: wheat; padding: 5px 10px; border-radius: 5px;" onclick="return confirm('Đơn hàng đã được vận chuyển. Nhấn OK để xóa đơn khỏi danh sách.')" href="?delid=<?php echo $result['id'] ?>&price=<?php echo $result['price'] ?>&time=<?php echo $result['date_order'] ?>">Xóa đơn đã giao </a>
 
                         <?php
                         }
@@ -103,6 +106,7 @@ $ct= new cart();
 
 
                         </td>
+                        <td style="vertical-align: middle; padding: 12px 0px"> <a style="border: none;color: white;background-color: blue; padding: 5px 10px; border-radius: 5px;" href="indonhang.php?customerid=<?php echo $result['customer_id'] ?> "> In đơn </a></td>
                     </tr>
 
                     <?php 

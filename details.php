@@ -11,11 +11,18 @@
         $id = $_GET['proid'];
     }
 
-
+     // Đoạn if ngay dưới này có thể bị bỏ đi hoặc dùng lại trong video ng ta bỏ đi
+     // 
      if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
         $quantity=$_POST['quantity'];
 
      $AddtoCart = $ct->add_to_cart($quantity,$id);
+    }
+
+        $customer_id=Session::get('customer_id');
+        if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['compare'])) {
+        $productid=$_POST['productid'];
+        $insertCompare = $product->insertCompare($productid,$customer_id);
     }
 
 
@@ -49,7 +56,7 @@
                     <div class="add-cart">
                         <form action="" method="post">
                             <input type="number" class="buyfield" name="quantity" min="1" value="1" />
-                            <input type="submit" class="buysubmit" name="submit" value="Đặt sản xuất"
+                            <input type="submit" class="buysubmit" name="submit" value="Đặt hàng"
                                 style="background-color:green;" />
 
                         </form>
@@ -61,10 +68,24 @@
                             }
                             ?>
                     </div>
+                    <div class="add-cart">
+                        <form action="" method="post">
+                            <!-- <a href="?wlist=<?php echo $result_details['productId']?>" class="buysubmit">Thêm Wishlist</a> -->
+                            <!-- <a href="?compare=<?php echo $result_details['productId']?>" class="buysubmit">So sánh</a> -->
+                            <input type="hidden" name="productid" value="<?php echo $result_details['productId'] ?>" />
+                            <input type="submit" class="buysubmit" name="compare" value="So sánh" style="background-color:green;" />
+                            <?php 
+
+                                if(isset($insertCompare)){
+                                    echo $insertCompare;
+                                }
+                            ?>
+                        </form>
+                    </div>
                 </div>
                 <div class="product-desc">
-                    <h2 style="background-color:brown;">Thông tin chi tiết sản phẩm</h2>
-                    <p><?php echo $result_details['product_desc'] ?></p>
+                    <h2 style="background: #ff7100; color: white; border-radius: 5px;">Thông tin chi tiết sản phẩm</h2>
+                    <p ><span style=" color:black; font-size: 24px; font-weight: bold;"><?php echo $result_details['product_desc'] ?></span></p>
                 </div>
 
             </div>
@@ -83,12 +104,11 @@
                         while($result_allcat= $get_all_category->fetch_assoc()){
 
                     ?>
-                    <li><a href="productbycat.php?catid=<?php echo $result_allcat['catId']?>"><?php echo $result_allcat['catName']?></a></li>
+                    <li><a style="font-size: 16px;color: black;" href="productbycat.php?catid=<?php echo $result_allcat['catId']?>"><?php echo $result_allcat['catName']?></a></li>
                     <?php 
                          }
                         }
                         ?>
-
                 </ul>
 
             </div>

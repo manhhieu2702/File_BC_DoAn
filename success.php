@@ -47,7 +47,7 @@
     <div class="content">
         <div class="section group">
             <br>
-           <center> <h2> ĐƠN HÀNG CỦA BẠN ĐÃ ĐƯỢC ĐẶT !!!</h2></center>
+           <center> <h2> ĐƠN HÀNG CỦA BẠN ĐÃ ĐƯỢC ĐẶT VÀ SẼ XUẤT XƯỞNG TRONG 1 TUẦN TỚI !!!</h2></center>
            <?php
            $customer_id=Session::get('customer_id');
            $get_amount=$ct->getAmountPrice($customer_id);
@@ -59,7 +59,7 @@
             }
            }
            ?>
-           <p class="success_note">Cảm ơn bạn đã mua sản phẩm tại website <span style="font-weight: bold; color: red; font-size: 18px">Cửa hàng mĩ nghệ Điệp Hoa  </span>!!!<p>
+           <p class="success_note">Cảm ơn bạn đã mua sản phẩm tại website <span style="font-weight: bold; color: red; font-size: 18px">Xưởng đồ gỗ Điệp Hoa  </span>!!!<p>
             <p class="success_note">Chúng tôi sẽ liên hệ với bạn để giao hàng sớm nhất có thể. Kiểm tra đơn hàng vừa đặt của bạn nếu muốn tại đây<a style="font-weight: bold;text-decoration:initial;font-style:italic;" href="orderdetails.php">____ NHẤN ĐỂ XEM ___</a></p>
         </div>
     </div>

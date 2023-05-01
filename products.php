@@ -18,12 +18,12 @@
             if($product_list){
                 while($result=$product_list->fetch_assoc()){            
             ?>
-            <div class="grid_1_of_4 images_1_of_4" style="height: 400px; width: 260px;">
+            <div class="grid_1_of_4 images_1_of_4" style="height: 400px; width: 290px; position: relative;">
                 <a href="details.php"><img height="200" src="admin/uploads/<?php echo $result['image'] ?>" alt="" /></a>
                 <h2><?php echo $result['productName'] ?></h2>
                 <p><?php echo $fm->textShorten($result['product_desc'],100) ?></p>
-                <p><span class="price"> <?php echo $fm->format_currency($result['price']) .' '.'VND' ?></span></p>
-                <div class="button"><span><a href="details.php?proid=<?php echo $result['productId'] ?>" class="details">Xem chi tiết</a></span></div>
+                <p><span class="price"> <?php echo $fm->format_currency($result['price']) .' '.'VNĐ' ?></span></p>
+                <div class="button"><span><a style="background: #ff7100; color: white; border-radius: 5px;position: absolute;top: 380px;left: 100px;" href="details.php?proid=<?php echo $result['productId'] ?>" class="details">Xem chi tiết</a></span></div>
             </div>
 
             <?php 
@@ -41,9 +41,9 @@
             $product_count = mysqli_num_rows($product_all);
             $product_button=ceil( $product_count/8);
 
-            echo '<span>Trang :</span>';
+            echo '<span style="font-style: italic;font-weight: bold;">TRANG </span>';
             for($i=1;$i<=$product_button;$i++){
-                echo '<a style="margin:0 5px; border: 1px solid black ;background-color:#602D8D; padding:5px" href="products.php?trang='.$i.'">'.$i.'</a>';
+                echo '<a style="margin:0 5px; border: none ;background: #ff7100; color: white; padding:5px;border-radius: 5px; " href="products.php?trang='.$i.'">'.$i.'</a>';
             }
             ?>
         </div>

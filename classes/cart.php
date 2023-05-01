@@ -42,8 +42,8 @@ class cart
 			return $msg;
 		}else{
 		$query_insert = "INSERT INTO tbl_cart(productId,quantity,sId,image,price,productName) VALUES('$id','$quantity','$sId','$image','$price','$productName') ";
-			$insert_cart = $this->db->insert($query_insert);
-			if($result){
+			$insert_cart = $this->db->insert($query_insert); 
+			if($insert_cart){   /*-------------sửa result thành insert_cart ngày 30-4*/
 				header('Location:cart.php');
 			}else{
 				header('Location:404.php');
@@ -190,7 +190,14 @@ class cart
 	 	return $result;
 	}
 
-
+		public function print_product_ordered($customer_id){
+		$query ="SELECT * FROM tbl_order INNER JOIN tbl_customer ON tbl_order.customer_id = tbl_customer.id
+		WHERE  customer_id='$customer_id'";
+		$get_product_ordered=$this->db->select($query);
+		return $get_product_ordered;
+	}
+	
+	
 
 }
 

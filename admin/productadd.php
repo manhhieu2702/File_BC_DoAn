@@ -17,9 +17,9 @@
 ?>
 
 <div class="grid_10">
-    <div class="box round first grid">
+    <div class="box round first grid" style="background-color: #d19405;border-radius:10px ;">
         <h2>Thêm sản phẩm mới</h2>
-        <div class="block">
+        <div class=" block copyblock" style="width: 900px;border-radius:10px ; " >
                         <?php
 
             if(isset($insertProduct)){
@@ -32,18 +32,18 @@
 
                     <tr>
                         <td>
-                            <label>Tên sản phẩm</label>
+                            <label><span style="color:white; font-weight: bold;font-size: 16px;">Tên sản phẩm :</span></label>
                         </td>
                         <td>
-                            <input type="text" name="productName" placeholder="Nhập tên sản phẩm..." class="medium" />
+                            <input style="height: 40px;border-radius:10px ;width: 500px;"  type="text" name="productName" placeholder="  Nhập tên sản phẩm..." class="medium" />
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <label>Danh mục sản phẩm</label>
+                            <label><span style="color:white; font-weight: bold;font-size: 16px;">Danh mục sản phẩm :</span></label> 
                         </td>
                         <td>
-                            <select id="select" name="category">
+                            <select style="height: 40px;border-radius:10px ;" id="select" name="category">
                                 <option>Chọn danh mục</option>
                                 <?php 
                                 $cat= new category();
@@ -64,10 +64,10 @@
                     </tr>
                     <tr>
                         <td>
-                            <label>Làng nghề/xưởng sản xuất</label>
+                            <label><span style="color:white; font-weight: bold;font-size: 16px;">Làng nghề/xưởng sx :</span></label>
                         </td>
                         <td>
-                            <select id="select" name="brand">
+                            <select style="height: 40px;border-radius:10px ; width: 300px;" id="select" name="brand">
                                 <option>Chọn làng nghề/xưởng sản xuất</option>
                                                                 <?php 
                                 $brand= new brand();
@@ -89,7 +89,7 @@
 
                     <tr>
                         <td style="vertical-align: top; padding-top: 9px;">
-                            <label>Mô tả</label>
+                            <label><span style="color:white; font-weight: bold;font-size: 16px;">Mô tả sản phẩm :</span></label>
                         </td>
                         <td>
                             <textarea name="product_desc" class="tinymce"></textarea>
@@ -97,28 +97,28 @@
                     </tr>
                     <tr>
                         <td>
-                            <label>Giá</label>
+                            <label><span style="color:white; font-weight: bold;font-size: 16px;">Giá thành :</span></label>
                         </td>
                         <td>
-                            <input type="text" name="price" placeholder="Giá bán.." class="medium" />
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <label>Tải ảnh lên</label>
-                        </td>
-                        <td>
-                            <input type="file" name="image" />
+                            <input style="height: 40px;border-radius:10px ;width: 500px;" type="text" name="price" placeholder="  Giá thành.." class="medium" />
                         </td>
                     </tr>
 
                     <tr>
                         <td>
-                            <label>Kiểu sản phẩm</label>
+                            <label><span style="color:white; font-weight: bold;font-size: 16px;">Ảnh tải lên :</span></label>
                         </td>
                         <td>
-                            <select id="select" name="type">
+                            <input style="height: 40px;border-radius:10px ; " type="file" name="image" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label><span style="color:white; font-weight: bold;font-size: 16px;">Kiểu sản phẩm :</span></label>
+                        </td>
+                        <td>
+                            <select style="height: 40px;border-radius:10px ; width: 300px;" id="select" name="type">
                                 <option>Chọn kiểu sản phẩm</option>
                                 <option value="0">Sản phẩm sản xuất đại trà</option>
                                 <option value="1">Sản phẩm làng nghề thủ công</option>
@@ -130,7 +130,8 @@
                     <tr>
                         <td></td>
                         <td>
-                            <input type="submit" name="submit" Value="Lưu" />
+                            <a href="index.php"><input style="margin-left: 380px; border-radius: 10px;font-weight:bold ; color: white;background-color: red; border:none; width:70px;font-size: 16px;height: 21px; cursor: pointer;"   name="cancel" Value=" Quay lại" /></a>
+                            <input style="border-radius: 10px;font-weight:bold ;font-size: 16px; color: white;background-color: blue; border:none;height: 30px;"  type="submit" name="submit" Value="Lưu" />
                         </td>
                     </tr>
                 </table>

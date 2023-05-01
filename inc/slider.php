@@ -14,7 +14,7 @@
                 <div class="text list_2_of_1">
                     <h2>Tượng gỗ</h2>
                     <p><?php echo $resultTuong['productName'] ?></p>
-                    <div class="button"><span><a href="details.php?proid=<?php echo $resultTuong['productId']?>">Thêm vào giỏ </a></span></div>
+                    <div class="button"><span><a style="background: #ff7100" href="details.php?proid=<?php echo $resultTuong['productId']?>">Thêm vào giỏ </a></span></div>
                 </div>
             </div>
             <?php 
@@ -33,7 +33,7 @@
                 <div class="text list_2_of_1">
                     <h2>Tranh khắc</h2>
                     <p><?php echo $resultTranh['productName'] ?></p>
-                    <div class="button"><span><a href="details.php?proid=<?php echo $resultTranh['productId']?>">Thêm vào giỏ </a></span></div>
+                    <div class="button"><span><a style="background: #ff7100" href="details.php?proid=<?php echo $resultTranh['productId']?>">Thêm vào giỏ </a></span></div>
                 </div>
             </div>
             <?php 
@@ -59,7 +59,7 @@
                 <div class="text list_2_of_1">
                     <h2>Câu đối</h2>
                     <p><?php echo $resultCauDoi['productName'] ?></p>
-                    <div class="button"><span><a href="details.php?proid=<?php echo $resultCauDoi['productId']?>">Thêm vào giỏ </a></span></div>
+                    <div class="button"><span><a style="background: #ff7100" href="details.php?proid=<?php echo $resultCauDoi['productId']?>">Thêm vào giỏ </a></span></div>
                 </div>
             </div>
 
@@ -80,7 +80,7 @@
                 <div class="text list_2_of_1">
                     <h2>Bàn ghế</h2>
                     <p><?php echo $resultBan['productName'] ?></p>
-                    <div class="button"><span><a href="details.php?proid=<?php echo $resultBan['productId']?>">Thêm vào giỏ </a></span></div>
+                    <div class="button"><span><a style="background: #ff7100" href="details.php?proid=<?php echo $resultBan['productId']?>">Thêm vào giỏ </a></span></div>
                 </div>
             </div>
             <?php 

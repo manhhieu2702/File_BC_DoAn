@@ -18,12 +18,12 @@
             if($product_feathered){
                 while($result=$product_feathered->fetch_assoc()){            
             ?>
-            <div class="grid_1_of_4 images_1_of_4" style="height: 400px ;width: 230px;">
+            <div class="grid_1_of_4 images_1_of_4" style="height: 400px ;width: 297px;position: relative;">
                 <a href="details.php"><img height="200" src="admin/uploads/<?php echo $result['image'] ?>" alt="" /></a>
-                <h2><?php echo $result['productName'] ?></h2>
-                <p><?php echo $fm->textShorten($result['product_desc'],100) ?></p>
-                <p><span class="price"> <?php echo $fm->format_currency($result['price']) .' '.'VND' ?></span></p>
-                <div class="button"><span><a href="details.php?proid=<?php echo $result['productId'] ?>" class="details">Xem chi tiết</a></span></div>
+                <h2 ><?php echo $result['productName'] ?></h2>
+                <p ><?php echo $fm->textShorten($result['product_desc'],100) ?></p>
+                <p ><span class="price"> <?php echo $fm->format_currency($result['price']) .' '.'VND' ?></span></p>
+                <div  class="button"><span><a style="background: #ff7100; color: white; border-radius: 5px;position: absolute;top: 380px;left: 110px;" href="details.php?proid=<?php echo $result['productId'] ?>" class="details">Xem chi tiết</a></span></div>
             </div>
             <?php 
             }
@@ -45,12 +45,12 @@
             if($product_new){
                 while($result_new=$product_new->fetch_assoc()){            
             ?>
-            <div class="grid_1_of_4 images_1_of_4" style="height: 400px; width: 230px;">
+            <div class="grid_1_of_4 images_1_of_4" style="height: 400px; width: 297px; position: relative;">
                 <a href="details.php"><img height="200" src="admin/uploads/<?php echo $result_new['image'] ?>" alt="" /></a>
                 <h2><?php echo $result_new['productName'] ?></h2>
                 <p><?php echo $fm->textShorten($result_new['product_desc'],100) ?></p>
                 <p><span class="price"> <?php echo $fm->format_currency( $result_new['price']) .' '.'VND' ?></span></p>
-                <div class="button"><span><a href="details.php?proid=<?php echo $result_new['productId'] ?>" class="details">Xem chi tiết</a></span></div>
+                <div class="button"><span><a style="background: #ff7100; color: white;  border-radius: 5px;position: absolute;top: 380px;left: 110px;" href="details.php?proid=<?php echo $result_new['productId'] ?>" class="details">Xem chi tiết</a></span></div>
             </div>
             <?php 
             }

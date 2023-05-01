@@ -49,15 +49,14 @@
     </div>
 </body> -->
 <body>
-    <div class="app-container app-theme-white body-tabs-shadow">
+    <div class="app-container app-theme-white body-tabs-shadow" >
         <div class="app-container">
-            <div class="h-100 bg-plum-plate bg-animation">
+            <div class="h-100 bg-plum-plate bg-animation" style="background-image: linear-gradient(135deg, #de6600 0%, #60a24b 100%) !important;">
                 <div class="d-flex h-100 justify-content-center align-items-center">
                     <div class="mx-auto app-login-box col-md-8">
-                        <!-- <div class="app-logo-inverse mx-auto mb-3"></div> -->
                         <div class="modal-dialog w-100 mx-auto">
                             <div class="modal-content">
-                                <div class="modal-body">
+                                <div class="modal-body" style="background-color:#ffbc00;">
                                     <div class="h5 modal-title text-center">
                                         <h4 class="mt-2">
                                             <div>Chào mừng trở lại</div>
@@ -93,7 +92,7 @@
                                             echo $login_check;
                                         }
                                         ?></span>
-                                        <div class="modal-footer clearfix">
+                                        <div class="modal-footer clearfix" style="background-color:#ffbc00;border: none;">
                                             <div class="float-right">
                                                 <button type="submit" class="btn btn-primary btn-lg">Đăng nhập trang quản trị</button>
                                             </div>

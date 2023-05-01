@@ -17,7 +17,7 @@ if(isset($_GET['productId'])){
    ?>
 
 <div class="grid_10">
-    <div class="box round first grid">
+    <div class="box round first grid" style="background-color: #d19405;border-radius:10px ;">
         <h2>Danh sách sản phẩm</h2>
         <div class="block">
             <?php
@@ -27,15 +27,15 @@ if(isset($_GET['productId'])){
 
             }
             ?>
-            <table class="data display datatable" id="example">
+            <table class="data display datatable" id="example" style="color: black;font-weight: bold;">
                 <thead>
                     <tr>
                         <th>STT</th>
-                        <th>Tên sản phẩm</th>
+                        <th style="width: 200px;">Tên sản phẩm</th>
                         <th>Giá bán</th>
                         <th>Ảnh minh họa</th>
                         <th>Nơi sản xuất</th>
-                        <th>Mô tả</th>
+                        <th style="width: 200px;">Mô tả</th>
                         <th>Kiểu sp</th>
                         <th>Thao tác</th>
                     </tr>
@@ -52,18 +52,18 @@ if(isset($_GET['productId'])){
 
                     <!--  -->
                     <tr class="odd gradeX">
-                        <td><?php echo $i ?></td>
-                        <td><?php echo $result['productName'] ?></td>
-                        <td><?php echo $fm->format_currency($result['price']) .' '.'VND'?></td>
-                        <td align="" ><img src="uploads/<?php echo $result['image'] ?>" width="100" /></td>
-                        <td><?php echo $result['brandName'] ?></td>
-                        <td><?php 
+                        <td style="vertical-align: middle;"><?php echo $i ?></td>
+                        <td style="vertical-align: middle;"><?php echo $result['productName'] ?></td>
+                        <td style="vertical-align: middle;"><?php echo $fm->format_currency($result['price']) .' '.'VND'?></td>
+                        <td style="vertical-align: middle;" align="" ><img src="uploads/<?php echo $result['image'] ?>" width="150" /></td>
+                        <td style="vertical-align: middle;"><?php echo $result['brandName'] ?></td>
+                        <td style="vertical-align: middle;"><?php 
 
                         echo $fm->textShorten($result['product_desc'],150) 
 
                         ?>  
                         </td>
-                        <th><?php
+                        <th style="vertical-align: middle;"><?php
                                 if($result['type']==0){
                                     echo "Hàng đại trà";
                                 }elseif($result['type']==1){
@@ -73,7 +73,7 @@ if(isset($_GET['productId'])){
                                 }
 
                          ?></th>
-                        <td><a href="productedit.php?productId=<?php echo $result['productId']?>">Chỉnh sửa</a> || <a onclick="return confirm('Bạn có muốn xóa sản phẩm này?')" href="?productId=<?php echo $result['productId']?>">Xóa</a></td>
+                        <td style="vertical-align: middle;"><a style="border: none;color: white; background-color: yellow; padding: 2px 10px; border-radius: 5px; color: red;" href="productedit.php?productId=<?php echo $result['productId']?>">Chỉnh sửa</a> || <a style="border: none;color: white; background-color: red; padding: 2px 10px; border-radius: 5px;" onclick="return confirm('Bạn có muốn xóa sản phẩm này?')" href="?productId=<?php echo $result['productId']?>">Xóa</a></td>
                     </tr>
                 <?php 
                     }

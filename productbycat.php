@@ -45,17 +45,17 @@
                 while($result_cat=$productbycat->fetch_assoc()){
 
             ?>
-            <div class="grid_1_of_4 images_1_of_4">
+            <div class="grid_1_of_4 images_1_of_4" style="height: 400px ;width: 290px;position: relative;">
                 <a href="details.php"><img height="200" src="admin/uploads/<?php echo $result_cat['image']?>" alt="" /></a>
                 <h2><?php echo $result_cat['productName']?></h2>
                 <p><?php echo $fm->textShorten($result_cat['product_desc'],100)?></p>
                 <p><span class="price"><?php echo $fm->format_currency($result_cat['price']).' '.'VND'?></span></p>
-                <div class="button"><span><a href="details.php?proid=<?php echo $result_cat['productId']?>" class="details">Xem chi tiết</a></span></div>
+                <div class="button"><span><a style="background: #ff7100; color: white; border-radius: 5px;position: absolute;top: 380px;left: 105px; " href="details.php?proid=<?php echo $result_cat['productId']?>" class="details">Xem chi tiết</a></span></div>
             </div>
             <?php
                 }
                 }else{
-                    echo '<span style="font-size:18px; font-weight:bold">_______________________________________________Danh mục này hiện chưa có sản phẩm !!!_____________________________________________<span>';
+                    echo '<span style="font-size:20px; font-weight:bold ;margin: ">__________________________________________________Danh mục này hiện chưa có sản phẩm !!!_____________________________________________<span>';
             }
 
             ?>

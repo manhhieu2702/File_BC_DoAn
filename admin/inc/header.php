@@ -44,23 +44,24 @@
 </head>
 
 <body>
-    <div class="container_12">
+    <div class="container_12" style="background-color: #674800;">
         <div class="grid_12 header-repeat">
-            <div id="branding">
+            <div id="branding" style="background-color: #c29e03; border-radius: 10px;">
                 <div class="floatleft logo">
-                    <img src="img/livelogo.png" alt="Logo" />
+                    <img src="img/logo3.png" alt="Logo" style="height: 100px;width:120px ;" />
                 </div>
-                <div class="floatleft middle">
+                <div style="vertical-align: middle;" class="floatleft middle" >
                     <h1>Cửa hàng đồ gỗ mĩ nghệ Điệp Hoa</h1>
                     <p>Địa chỉ : Bắc Sơn -Sóc Sơn- Hà Nội</p>
+                    <p>Địện thoại liện hệ : 0335557245</p>
                 </div>
                 <div class="floatright">
                     <div class="floatleft">
-                        <img src="img/img-profile.jpg" alt="Profile Pic" />
+                        <img style="width: 40px;margin-top: 15px;" src="img/img-profile.jpg" alt="Profile Pic" />
                     </div>
-                    <div class="floatleft marginleft10">
-                        <ul class="inline-ul floatleft">
-                            <li>Xin chào <?php echo Session::get('adminName') ?> !</li>
+                    <div  class="floatleft marginleft10" style="margin-top: 15px;">
+                        <ul class="inline-ul floatleft" style="font-size: 16px;font-weight: bold;">
+                            <li>Xin chào !!! <?php echo Session::get('adminName') ?> </li>
 
                             <?php 
                             if(isset($_GET['action']) && $_GET['action'] == 'logout'){
@@ -68,7 +69,7 @@
                             }
                             ?>
 
-                            <li><a href="?action=logout">Đăng xuất</a></li>
+                            <li><a style="border: none; color: white;font-size: 20px;font-weight: bold; background-color: red; padding: 10px 10px; border-radius: 5px;" onclick="return confirm('Bạn có chắc chắn thoát khỏi phiên làm việc ?')" href="?action=logout"><span>Đăng xuất</span></a></li>
                         </ul>
                     </div>
                 </div>
@@ -79,13 +80,13 @@
         <div class="clear">
         </div>
         <div class="grid_12">
-            <ul class="nav main">
-                <li class="ic-dashboard"><a href="index.php"><span>----</span></a> </li>
-                <li class="ic-form-style"><a href=""><span>Thông tin cá nhân</span></a></li>
-                <li class="ic-typography"><a href="changepassword.php"><span>Đổi mật khẩu</span></a></li>
-                <li class="ic-grid-tables"><a href="inbox.php"><span>Quản lý đơn đặt hàng</span></a></li>
-                <li class="ic-charts"><a href="../index.php"><span>Tới website</span></a></li>
-            </ul>
+            <div class="nav main" style=" display: flex;color: white;background-color:#c29e03; padding: 10px 0px;margin: 10px 0px; border-radius: 10px;">
+                <li style="padding: 0 10px;" class="ic-dashboard"><a href="index.php"><span>_</span></a> </li>
+                <li style="padding: 0 10px;" class="ic-form-style"><a href=""><span> Thông tin cá nhân</span></a></li>
+                <li style="padding: 0 10px;" class="ic-charts"><a href="changepassword.php"><span> Đổi mật khẩu</span></a></li>
+                <li style="padding: 0 10px;" class="ic-grid-tables"><a href="inbox.php"><span> Quản lý đơn đặt hàng</span></a></li>
+                <li style="padding: 0 10px;" class="ic-charts"><a href="../index.php"><span> Tới website</span></a></li>
+            </div>
         </div>
         <div class="clear">
         </div>

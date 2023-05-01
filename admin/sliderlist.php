@@ -18,7 +18,7 @@ if(isset($_GET['slider_xoabo']) ){
 
 ?>
 <div class="grid_10">
-    <div class="box round first grid">
+    <div class="box round first grid" style="background-color: #d19405;border-radius:10px ;">
         <h2>Danh sách slider</h2>
         <div class="block">
             <?php 
@@ -27,7 +27,7 @@ if(isset($_GET['slider_xoabo']) ){
                 echo $del_slider;
             }
             ?>
-            <table class="data display datatable" id="example">
+            <table class="data display datatable" id="example" style="color: black;font-weight: bold;">
                 <thead>
                     <tr>
                         <th>Mã số</th>
@@ -47,29 +47,29 @@ if(isset($_GET['slider_xoabo']) ){
                                 $i++;
 
                     ?>
-                    <tr class="odd gradeX">
-                        <td><?php echo $i?></td>
-                        <td><?php echo $result_slider['sliderName']?></td>
-                        <td><img src="uploads/<?php echo $result_slider['slider_image']?>" height="120px" width="300px" /></td>
-                        <td>
+                    <tr class="odd gradeX" >
+                        <td style="vertical-align: middle;" ><?php echo $i?></td>
+                        <td style="vertical-align: middle;" ><?php echo $result_slider['sliderName']?></td>
+                        <td style="vertical-align: middle;"><img  src="uploads/<?php echo $result_slider['slider_image']?>" height="150px" width="350px" /></td>
+                        <td style="vertical-align: middle;">
 
                             <?php
                              if( $result_slider['type']==1){
 
                             ?>
-                            <a href="?del_slider=<?php echo $result_slider['sliderId']?>&type=0">----Tắt----</a>
+                            <a style="border: none;color: red; background-color: yellow; padding: 2px 10px; border-radius: 5px;" href="?del_slider=<?php echo $result_slider['sliderId']?>&type=0">----Tắt----</a>
                             <?php 
 
                         }else{
                             ?>
-                            <a href="?del_slider=<?php echo $result_slider['sliderId']?>&type=1">----Bật----</a>
+                            <a style="border: none;color: white; background-color: green; padding: 2px 10px; border-radius: 5px;" href="?del_slider=<?php echo $result_slider['sliderId']?>&type=1">----Bật----</a>
                             <?php
                         }
                             
                         ?>
                         </td>
-                        <td>
-                            <a href="?slider_xoabo=<?php echo $result_slider['sliderId']?>" onclick="return confirm('Bạn có chắc chắn muốn xóa ?');">Xóa</a>
+                        <td style="vertical-align: middle;">
+                            <a style=" border: none;color: white; background-color: red; padding: 2px 10px; border-radius: 5px;" href="?slider_xoabo=<?php echo $result_slider['sliderId']?>" onclick="return confirm('Bạn có chắc chắn muốn xóa ?');">Xóa</a>
                         </td>
                     </tr>
                     <?php 

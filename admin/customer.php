@@ -22,10 +22,10 @@
     }*/
 ?>
 <div class="grid_10">
-    <div class="box round first grid">
-        <h2>Sửa danh mục</h2>
+    <div class="box round first grid" style="background-color: #d19405;border-radius:10px ;">
+        <h2>Thông tin khách hàng đặt sản phẩm</h2>
 
-        <div class="block copyblock">
+        <div class="block copyblock " style="color: black;font-weight: bold; border-radius:10px ;">
 
         <?php 
 
@@ -33,50 +33,52 @@
             if($get_customer){
                 while($result = $get_customer->fetch_assoc()){
         ?>
-            <form action="" method="post">
-                <table class="form" align="center" >
+            <form action="" method="post"  style="margin-left: 100px;">
+                <table class="form" align="center"  >
                     <tr>
-                        <td>Tên khách hàng</td>
-                        <td>:</td>
+                        <td style="color:white; font-weight: bold;font-size: 16px;">Tên khách hàng</td>
+                        
                         <td>
-                            <input type="text" readonly="readonly" value="<?php echo $result['name']?>" class="medium" />
+                            <input style="height: 40px;border-radius:10px ;width: auto;font-weight: bold;" type="text" readonly="readonly" value="<?php echo $result['name']?>" class="medium" />
                         </td>
                     </tr>
                     <tr>
-                        <td> Số điện thoại</td>
-                        <td>:</td>
+                        <td style="color:white; font-weight: bold;font-size: 16px;"> Số điện thoại</td>
+                        
                         <td>
-                            <input type="text" readonly="readonly" value="<?php echo $result['phone']?>" class="medium" />
+                            <input style="height: 40px;border-radius:10px ;width: auto;font-weight: bold;" type="text" readonly="readonly" value="<?php echo $result['phone']?>" class="medium" />
                         </td>
                     </tr>
                     <tr>
-                        <td>Địa chỉ nhà </td>
-                        <td>:</td>
+                        <td style="color:white; font-weight: bold;font-size: 16px;">Địa chỉ nhà </td>
+                        
                         <td>
-                            <input type="text" readonly="readonly" value="<?php echo $result['address']?>" class="medium" />
+                            <input style="height: 40px;border-radius:10px ;width: auto;font-weight: bold;" type="text" readonly="readonly" value="<?php echo $result['address']?>" class="medium" />
                         </td>
                     </tr>
                     <tr>
-                        <td>Địa chỉ email</td>
-                        <td>:</td>
+                        <td style="color:white; font-weight: bold;font-size: 16px;">Địa chỉ email</td>
+                        
                         <td>
-                            <input type="text" readonly="readonly" value="<?php echo $result['email']?>" class="medium" />
+                            <input style="height: 40px;border-radius:10px ;width: auto;font-weight: bold;" type="text" readonly="readonly" value="<?php echo $result['email']?>" class="medium" />
                         </td>
                     </tr>
                     <tr>
-                        <td>Số căn cước</td>
-                        <td>:</td>
+                        <td style="color:white; font-weight: bold;font-size: 16px;">Số căn cước</td>
+                        
                         <td>
-                            <input type="text" readonly="readonly" value="<?php echo $result['zipcode']?>" class="medium" />
+                            <input style="height: 40px;border-radius:10px ;width: auto;font-weight: bold;" type="text" readonly="readonly" value="<?php echo $result['zipcode']?>" class="medium" />
                         </td>
                     </tr>
                 </table>
             </form>
+
              <?php
                     } 
                     }
             ?>
         </div>
+             <a href="inbox.php"><input style="margin-left: 380px;margin-top: 20px; border-radius: 10px;font-weight:bold ; color: white;background-color: red; border:none; width:70px;font-size: 16px;padding: 10px; cursor: pointer;"   name="cancel" Value=" Quay lại" /></a>
     </div>
 </div>
 <?php include 'inc/footer.php';?>

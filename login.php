@@ -49,12 +49,12 @@
 
                         ?>
             <form action="" method="POST">
-                <input  type="text" name="email" class="field" placeholder="Nhập email đăng nhập">
-                <input  type="password" name="password" class="field" placeholder="Nhập mật khẩu" >
+                <input style="color: black;"  type="text" name="email" class="field" placeholder="Nhập email đăng nhập">
+                <input style="color: black;"  type="password" name="password" class="field" placeholder="Nhập mật khẩu" >
             
                 <p class="note">Nếu bạn quên mật khẩu, chỉ cần nhập email của bạn và nhấp vào <a href="#">đây</a></p>
                 <div class="buttons">
-                    <div><input type="submit" name="login" value="Đăng nhập" class="grey" style=" background:green ;height: 35px;font-size: 18px;font-weight:bold;border-radius:5px;"></input></div>
+                    <div><input type="submit" name="login" value="Đăng nhập" class="grey" style=" border: none; background:green ;color:white; height: 35px;font-size: 18px;font-weight:bold;border-radius:5px;"></input></div>
                 </div>
             </form>
         </div>
@@ -81,31 +81,33 @@
                         <tr>
                             <td>
                                 <div>
-                                    <input type="text" placeholder ="Họ tên" name="name">
+                                    <input style="color: black;" type="text" placeholder ="Họ tên" name="name">
                                 </div>
                                 <div>
-                                    <input type="text" placeholder="Số căn cước" name="zipcode">
+                                    <input style="color: black;" type="text" placeholder="Số căn cước" name="zipcode">
                                 </div>
                                 <div>
-                                    <input type="text" placeholder="Dịa chỉ email" name="email">
+                                    <input style="color: black;" type="text" placeholder="Dịa chỉ email" name="email">
                                 </div>
                             </td>
                             <td>
                                 <div>
-                                    <input type="text" placeholder="Dịa chỉ" name="address">
+                                    <input style="color: black;" type="text" placeholder="Dịa chỉ" name="address">
                                 </div>
                                 <div>
-                                    <input type="text" placeholder="Điện thoại" name="phone">
+                                    <input style="color: black;" type="text" placeholder="Điện thoại" name="phone">
                                 </div>
                                 <div>
-                                    <input type="text" placeholder="Mật khẩu" name="password">
+                                    <input style="color: black;" type="text" placeholder="Mật khẩu" name="password">
                                 </div>
                             </td>
                         </tr>
                     </tbody>
+                    <span style="color: blueviolet; font-size: 16px;font-weight: bold;"> Lưu ý : địa chỉ được đăng kí sẽ là địa chỉ giao nhận hàng !!! </span>
                 </table>
+
                 <div class="search">
-                    <div><input type="submit" name="submit" value="Tạo tài khoản" class="grey" style=" background:green ;height: 35px;font-size: 18px;font-weight:bold;border-radius:5px;"></input></div>
+                    <div><input type="submit" name="submit" value="Tạo tài khoản" class="grey" style=" border: none; background:green ;color:white; height: 35px;font-size: 18px;font-weight:bold;border-radius:5px;"></input></div>
                 </div>
                 <p class="terms">Bằng cách nhấp vào 'Tạo tài khoản', bạn đồng ý với các thông tin trên và<a href="#">
                         &amp;

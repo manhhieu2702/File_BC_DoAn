@@ -68,24 +68,25 @@
                             
                     ?>
                     <tr>
-                        <td><?php echo $result['productName']?></td>
-                        <td><img src="admin/uploads/<?php echo $result['image']?>" alt="" /></td>
-                        <td><?php echo $fm->format_currency($result['price']).' '.'VND'?></td>
-                        <td>
+                        <td style="vertical-align: middle;"><?php echo $result['productName']?></td>
+                        <td style="vertical-align: middle;"><img style="width: 100px;height: auto;" src="admin/uploads/<?php echo $result['image']?>" alt="" /></td>
+                        <td style="vertical-align: middle;"><?php echo $fm->format_currency($result['price']).' '.'VND'?></td>
+                        <td style="vertical-align: middle;">
                             <form action="" method="post">
                                 <input type="hidden" name="cartId" value="<?php echo $result['cartId']?>" />
                                 <input type="number" name="quantity" min="0" value="<?php echo $result['quantity']?>" />
                                 <input type="submit" name="submit" value="Cập nhật" />
                             </form>
                         </td>
-                        <td><?php echo $fm->format_currency($result['price']*0.01) .' '.'VND'?></td>
-                        <td>
+                        <td style="vertical-align: middle;"><?php echo $fm->format_currency($result['price']*0.01) .' '.'VND'?></td>
+                        <td style="vertical-align: middle;">
                             <?php 
                                 $total= $result['price'] * $result['quantity'] +$result['price']*0.01;
                                 echo $fm->format_currency($total) .' '.'VND';
                             ?>
                         </td>
-                        <td><a onclick="return confirm('Bạn có muốn xóa sản phẩm này?')" href="?cartid=<?php echo $result['cartId']?>">Xóa</a></td>
+                        <td style="vertical-align: middle;"><a style="border: none;padding: 2px 10px; color: white;background-color: red; border-radius: 5px;" onclick="return confirm('Bạn có muốn xóa sản phẩm này?')" href="?cartid=<?php echo $result['cartId']?>">Xóa</a></td>
+                        
                     </tr>
                     <?php
 
@@ -96,9 +97,9 @@
                     ?>
                 </table>
                 <table style="float:right;text-align:left;" width="40%">
-                    <tr>
-                        <th>TỔNG TIỀN GIỎ HÀNG </th>
-                        <td>
+                    <tr style="font-size: 20px;">
+                        <th style="font-weight: bold;">TỔNG TIỀN GIỎ HÀNG </th>
+                        <td style="font-weight: bold;color: red;">
                             <?php 
 
                             echo $fm->format_currency($subtotal) .' '.'VND' ;
@@ -109,7 +110,7 @@
                 </table>
             </div>
             <div class="shopping">
-                <div class="shopleft">
+                <div class="shopleft" style="margin-left: 200px;">
                     <a href="index.php"> <img src="images/shop.png" alt="" /></a>
                 </div>
                 <div class="shopright">

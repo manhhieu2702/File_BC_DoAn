@@ -24,6 +24,7 @@ private function connectDB(){
    if(!$this->link){
      $this->error ="Connection fail".$this->link->connect_error;
     return false;
+
    }
  }
  

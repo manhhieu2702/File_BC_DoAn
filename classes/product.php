@@ -341,6 +341,60 @@ class product
 			return $result;
    }
 
+   public function insertCompare($productid,$customer_id){
+
+   	
+		$productid = mysqli_real_escape_string($this->db->link, $productid); 
+		$customer_id = mysqli_real_escape_string($this->db->link, $customer_id);
+		
+	
+		$check_compare="SELECT * FROM tbl_compare WHERE productId='$productid' AND customer_id='$customer_id'";
+		$result_check_compare = $this->db->select($check_compare);
+		if($result_check_compare){
+			$msg="<span class='error' style='color:red; font-weight: bold;'>Sản phẩm đã có sẵn trong danh sách so sánh !</span>";
+			return $msg;
+		}else{
+		$query ="SELECT * FROM tbl_product WHERE productId='$productid' "; 
+		$result = $this->db->select($query)->fetch_assoc();
+
+
+		$productName= $result["productName"];
+		$price= $result["price"];
+		$image= $result["image"];
+		
+	
+
+		$query_insert = "INSERT INTO tbl_compare(productId,price,image,customer_id,productName) VALUES('$productid','$price','$image','$customer_id','$productName') ";
+			$insert_compare = $this->db->insert($query_insert);
+			if($insert_compare){
+
+				$alert = "<span class='success' style='color:green; font-weight: bold;'> Thêm thành công vào danh sách so sánh !!!</span>";
+					return $alert;
+				}else{
+					$alert = "<span class='error' style='color:red; font-weight: bold;'> Thêm không thành công !!!</span>";
+					return $alert;
+				}
+			}	
+			
+   }
+   public function get_compare($customer_id){
+
+   	$query="SELECT * FROM tbl_compare WHERE customer_id='$customer_id' Order by id desc";
+   	$result=$this->db->select($query);
+   	return $result;
+   }
+   	public function del_product_compare($product_id){
+
+		$product_id = mysqli_real_escape_string($this->db->link, $product_id);
+		$query ="DELETE FROM tbl_compare WHERE productId='$product_id'";
+		$result=$this->db->delete($query);
+		if($result){
+			header('Location:compare.php');
+		}else{
+			$msg="<span class='error' style='color:red; font-size:18px'>Xóa sản phẩm trong danh sách bị lỗi !!!</span>";
+			return $msg;
+		}
+	}
 }
 
 ?>
