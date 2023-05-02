@@ -35,12 +35,12 @@
                 while($result_search=$search_product->fetch_assoc()){
 
             ?>
-            <div class="grid_1_of_4 images_1_of_4">
+            <div class="grid_1_of_4 images_1_of_4" style="height: 440px ;width: 330px;position: relative;">
                 <a href="details.php"><img height="200" src="admin/uploads/<?php echo $result_search['image']?>" alt="" /></a>
-                <h2><?php echo $result_search['productName']?></h2>
-                <p><?php echo $fm->textShorten($result_search['product_desc'],100)?></p>
+                <h2 style="font-weight: bold;font-size: 16px;"><?php echo $result_search['productName']?></h2>
+                <!-- <p><?php echo $fm->textShorten($result_search['product_desc'],100)?></p> -->
                 <p><span class="price"><?php echo $fm->format_currency($result_search['price']).' '.'VND'?></span></p>
-                <div class="button"><span><a href="details.php?proid=<?php echo $result_search['productId']?>" class="details">Xem chi tiết</a></span></div>
+                <div class="button"><span><a style="background: #ff7100; color: white; border-radius: 5px;position: absolute;top: 380px;left: 110px;" href="details.php?proid=<?php echo $result_search['productId']?>" class="details">Xem chi tiết</a></span></div>
             </div>
             <?php
                 }

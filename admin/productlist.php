@@ -32,6 +32,7 @@ if(isset($_GET['productId'])){
                     <tr>
                         <th>STT</th>
                         <th style="width: 200px;">Tên sản phẩm</th>
+                        <th>Tổng kho</th>
                         <th>Giá bán</th>
                         <th>Ảnh minh họa</th>
                         <th>Nơi sản xuất</th>
@@ -54,6 +55,7 @@ if(isset($_GET['productId'])){
                     <tr class="odd gradeX">
                         <td style="vertical-align: middle;"><?php echo $i ?></td>
                         <td style="vertical-align: middle;"><?php echo $result['productName'] ?></td>
+                        <td style="vertical-align: middle;"><?php echo $result['product_quantity'] .' '.'Sản phẩm' ?></td>
                         <td style="vertical-align: middle;"><?php echo $fm->format_currency($result['price']) .' '.'VND'?></td>
                         <td style="vertical-align: middle;" align="" ><img src="uploads/<?php echo $result['image'] ?>" width="150" /></td>
                         <td style="vertical-align: middle;"><?php echo $result['brandName'] ?></td>

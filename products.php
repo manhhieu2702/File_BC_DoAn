@@ -5,7 +5,7 @@
 ?>
 
 <div class="main">
-    <div class="content" style="padding: 15px 0;">
+    <div class="content" style="padding: 5px 0;">
         <div class="content_top">
             <div class="heading">
                 <h3 style="font-style: italic;font-weight: bold;">Danh sách sản phẩm tổng hợp :</h3>
@@ -18,12 +18,12 @@
             if($product_list){
                 while($result=$product_list->fetch_assoc()){            
             ?>
-            <div class="grid_1_of_4 images_1_of_4" style="height: 400px; width: 290px; position: relative;">
+            <div class="grid_1_of_4 images_1_of_4" style="height: 440px ;width: 310px; position: relative;">
                 <a href="details.php"><img height="200" src="admin/uploads/<?php echo $result['image'] ?>" alt="" /></a>
-                <h2><?php echo $result['productName'] ?></h2>
-                <p><?php echo $fm->textShorten($result['product_desc'],100) ?></p>
+                <h2 style="font-weight: bold;font-size: 16px;"><?php echo $result['productName'] ?></h2>
+                <!-- <p><?php echo $fm->textShorten($result['product_desc'],100) ?></p> -->
                 <p><span class="price"> <?php echo $fm->format_currency($result['price']) .' '.'VNĐ' ?></span></p>
-                <div class="button"><span><a style="background: #ff7100; color: white; border-radius: 5px;position: absolute;top: 380px;left: 100px;" href="details.php?proid=<?php echo $result['productId'] ?>" class="details">Xem chi tiết</a></span></div>
+                <div class="button"><span><a style="background: #ff7100; color: white; border-radius: 5px;position: absolute;top: 380px;left: 110px;" href="details.php?proid=<?php echo $result['productId'] ?>" class="details">Xem chi tiết</a></span></div>
             </div>
 
             <?php 

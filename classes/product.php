@@ -24,6 +24,7 @@ class product
 		
 
 		$productName = mysqli_real_escape_string($this->db->link, $data['productName']); 
+		$product_quantity = mysqli_real_escape_string($this->db->link, $data['product_quantity']);
 		$category = mysqli_real_escape_string($this->db->link, $data['category']);
 		$brand = mysqli_real_escape_string($this->db->link, $data['brand']);
 		$product_desc = mysqli_real_escape_string($this->db->link, $data['product_desc']);
@@ -42,12 +43,12 @@ class product
 		$uploaded_image = "uploads/".$unique_image;
 
 
-		if($productName=="" || $category=="" || $brand=="" || $product_desc=="" || $price=="" || $type=="" || $file_name==""){
+		if($productName=="" || $category=="" || $brand=="" || $product_desc=="" || $price=="" || $type=="" || $file_name=="" || $product_quantity=="" ){
 			$alert = "<span class='error'> Các trường dữ liệu không được để trống !!!</span>";
 			return $alert;
 		}else{
 			move_uploaded_file($file_temp, $uploaded_image);
-			$query = "INSERT INTO tbl_product(productName,catId,brandId,product_desc,price,type,image) VALUES('$productName','$category','$brand','$product_desc','$price','$type','$unique_image') ";
+			$query = "INSERT INTO tbl_product(productName,product_quantity,catId,brandId,product_desc,price,type,image) VALUES('$productName','$product_quantity','$category','$brand','$product_desc','$price','$type','$unique_image') ";
 			$result = $this->db->insert($query);
 			if($result){
 				$alert = "<span class='success'> Thêm sản phẩm thành công !!!</span>";
@@ -77,7 +78,8 @@ class product
 	public function update_product($data,$files,$id){
 		
 
-		$productName = mysqli_real_escape_string($this->db->link, $data['productName']); 
+		$productName = mysqli_real_escape_string($this->db->link, $data['productName']);
+		$product_quantity = mysqli_real_escape_string($this->db->link, $data['product_quantity']); 
 		$category = mysqli_real_escape_string($this->db->link, $data['category']);
 		$brand = mysqli_real_escape_string($this->db->link, $data['brand']);
 		$product_desc = mysqli_real_escape_string($this->db->link, $data['product_desc']);
@@ -96,13 +98,13 @@ class product
 		$uploaded_image = "uploads/".$unique_image;
 
 
-		if($productName=="" || $category=="" || $brand=="" || $product_desc=="" || $price=="" || $type=="" ){
+		if($productName=="" || $category=="" || $brand=="" || $product_desc=="" || $price=="" || $type=="" ||$product_quantity=="" ){
 			$alert = "<span class='error'> Các trường dữ liệu không được để trống !!!</span>";
 			return $alert;
 		}else{
 
 			if(!empty($file_name)){
-			if($file_size > 1048567){
+			if($file_size > 10485670){
 
 				$alert = "<span class='error'> Ảnh thêm vào cần nhỏ hơn 2MB !</span>";
 				return $alert;
@@ -112,8 +114,10 @@ class product
 				$alert = "<span class='error'> Bạn chỉ có thể tải lên :- ".implode(',', $permited)."</span>";
 				return $alert;
 			}
+			move_uploaded_file($file_temp, $uploaded_image);
 			$query = "UPDATE tbl_product SET
 			 productName='$productName',
+			 product_quantity='$product_quantity',
 			 catId='$category', 
 			 brandId='$brand', 
 			 product_desc='$product_desc', 
@@ -121,11 +125,10 @@ class product
 			 type='$type', 
 			 image='$unique_image'
 			 WHERE productId='$id' ";
-
-
 			}else{
 			$query = "UPDATE tbl_product SET
 			 productName='$productName',
+			 product_quantity='$product_quantity',
 			 catId='$category', 
 			 brandId='$brand', 
 			 product_desc='$product_desc', 
@@ -383,6 +386,13 @@ class product
    	$result=$this->db->select($query);
    	return $result;
    }
+   public function get_wishlist($customer_id){
+
+   	$query="SELECT * FROM tbl_wishlist WHERE customer_id='$customer_id' Order by id desc";
+   	$result=$this->db->select($query);
+   	return $result;
+
+   }
    	public function del_product_compare($product_id){
 
 		$product_id = mysqli_real_escape_string($this->db->link, $product_id);
@@ -394,6 +404,55 @@ class product
 			$msg="<span class='error' style='color:red; font-size:18px'>Xóa sản phẩm trong danh sách bị lỗi !!!</span>";
 			return $msg;
 		}
+	}
+
+	   	public function del_product_wishlist($product_id,$customer_id){
+
+		$product_id = mysqli_real_escape_string($this->db->link, $product_id);
+		$customer_id = mysqli_real_escape_string($this->db->link, $customer_id);
+		$query ="DELETE FROM tbl_wishlist WHERE productId='$product_id' AND customer_id='$customer_id'";
+		$result=$this->db->delete($query);
+		if($result){
+			header('Location:wishlist.php');
+		}else{
+			$msg="<span class='error' style='color:red; font-size:18px'>Xóa sản phẩm trong danh sách bị lỗi !!!</span>";
+			return $msg;
+		}
+	}
+	public function insertWishlist($productid,$customer_id){
+
+
+		$productid = mysqli_real_escape_string($this->db->link, $productid); 
+		$customer_id = mysqli_real_escape_string($this->db->link, $customer_id);
+		
+	
+		$check_wlist="SELECT * FROM tbl_wishlist WHERE productId='$productid' AND customer_id='$customer_id'";
+		$result_check_wlist = $this->db->select($check_wlist);
+		if($result_check_wlist){
+			$msg="<span class='error' style='color:red; font-weight: bold;'>Sản phẩm đã có trong danh sách yêu thích  !</span>";
+			return $msg;
+		}else{
+		$query ="SELECT * FROM tbl_product WHERE productId='$productid' "; 
+		$result = $this->db->select($query)->fetch_assoc();
+
+
+		$productName= $result["productName"];
+		$price= $result["price"];
+		$image= $result["image"];
+		
+	
+
+		$query_insert = "INSERT INTO tbl_wishlist(productId,price,image,customer_id,productName) VALUES('$productid','$price','$image','$customer_id','$productName') ";
+			$insert_wlist = $this->db->insert($query_insert);
+			if($insert_wlist){
+
+				$alert = "<span class='success' style='color:green; font-weight: bold;'> Thêm thành công vào danh sách yêu thích !!!</span>";
+					return $alert;
+				}else{
+					$alert = "<span class='error' style='color:red; font-weight: bold;'> Thêm không thành công !!!</span>";
+					return $alert;
+				}
+			}
 	}
 }
 

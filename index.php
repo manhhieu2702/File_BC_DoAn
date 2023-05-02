@@ -5,7 +5,7 @@
 ?>
 
 <div class="main">
-    <div class="content" style="padding: 15px 0;">
+    <div class="content" style="padding: 5px 0;">
         <div class="content_top">
             <div class="heading">
                 <h3>Sản phẩm làng nghề nổi bật</h3>
@@ -18,10 +18,10 @@
             if($product_feathered){
                 while($result=$product_feathered->fetch_assoc()){            
             ?>
-            <div class="grid_1_of_4 images_1_of_4" style="height: 400px ;width: 297px;position: relative;">
+            <div class="grid_1_of_4 images_1_of_4" style="height: 440px ;width: 330px;position: relative;">
                 <a href="details.php"><img height="200" src="admin/uploads/<?php echo $result['image'] ?>" alt="" /></a>
-                <h2 ><?php echo $result['productName'] ?></h2>
-                <p ><?php echo $fm->textShorten($result['product_desc'],100) ?></p>
+                <h2 style="font-weight: bold;font-size: 16px;"><?php echo $result['productName'] ?></h2>
+                <!-- <p ><?php echo $fm->textShorten($result['product_desc'],100) ?></p> -->
                 <p ><span class="price"> <?php echo $fm->format_currency($result['price']) .' '.'VND' ?></span></p>
                 <div  class="button"><span><a style="background: #ff7100; color: white; border-radius: 5px;position: absolute;top: 380px;left: 110px;" href="details.php?proid=<?php echo $result['productId'] ?>" class="details">Xem chi tiết</a></span></div>
             </div>
@@ -32,8 +32,8 @@
         </div>
         <!-- ------------ -->
     </div>
-    <div class="content" style="padding: 15px 0;">
-        <div class="content_bottom">
+    <div class="content" style="padding: 5px 0;">
+        <div class="content_top">
             <div class="heading">
                 <h3>Sản phẩm mới về</h3>
             </div>
@@ -45,10 +45,10 @@
             if($product_new){
                 while($result_new=$product_new->fetch_assoc()){            
             ?>
-            <div class="grid_1_of_4 images_1_of_4" style="height: 400px; width: 297px; position: relative;">
+            <div class="grid_1_of_4 images_1_of_4" style="height: 440px ;width: 330px; position: relative;">
                 <a href="details.php"><img height="200" src="admin/uploads/<?php echo $result_new['image'] ?>" alt="" /></a>
-                <h2><?php echo $result_new['productName'] ?></h2>
-                <p><?php echo $fm->textShorten($result_new['product_desc'],100) ?></p>
+                <h2 style="font-weight: bold;font-size: 16px;"><?php echo $result_new['productName'] ?></h2>
+                <!-- <p><?php echo $fm->textShorten($result_new['product_desc'],100) ?></p> -->
                 <p><span class="price"> <?php echo $fm->format_currency( $result_new['price']) .' '.'VND' ?></span></p>
                 <div class="button"><span><a style="background: #ff7100; color: white;  border-radius: 5px;position: absolute;top: 380px;left: 110px;" href="details.php?proid=<?php echo $result_new['productId'] ?>" class="details">Xem chi tiết</a></span></div>
             </div>

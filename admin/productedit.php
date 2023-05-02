@@ -52,6 +52,14 @@
                     </tr>
                     <tr>
                         <td>
+                            <label><span style="color:white; font-weight: bold;font-size: 16px;">Số lượng kho :</span></label>
+                        </td>
+                        <td>
+                            <input style="height: 40px;border-radius:10px ;width: 50px;" type="number"  value="<?php echo $result_product['product_quantity']?>" name="product_quantity" placeholder="  Nhập số lượng sản phẩm nhập về xưởng..." class="medium" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
                             <label><span style="color:white; font-weight: bold;font-size: 16px;">Danh mục sản phẩm :</span></label> 
                         </td>
                         <td>
@@ -124,7 +132,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <label><span style="color:white; font-weight: bold;font-size: 16px;">Giá thành :</span></label>
+                            <label><span style="color:white; font-weight: bold;font-size: 16px;">Giá thành : </span></label>
                         </td>
                         <td>
                             <input style="height: 40px;border-radius:10px ;width: 500px;" type="text" name="price" value="<?php echo $result_product['price']?>" class="medium" />

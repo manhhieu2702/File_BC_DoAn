@@ -47,6 +47,13 @@
     <script type="text/javascript" src="js/nav-hover.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Monda' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Doppio+One' rel='stylesheet' type='text/css'>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
     <script type="text/javascript">
     $(document).ready(function($) {
         $('#dc_mega-menu-orange').dcMegaMenu({
@@ -78,7 +85,7 @@
                             <span class="no_product">
                                 <?php 
                                 $sum = Session::get("sum");
-                                echo $sum .' '.'VND';
+                                echo $fm->format_currency($sum) .' '.'VND';
                                 ?>
                             </span>
                         </a>
@@ -165,7 +172,15 @@
 
 
                 ?>
-                
+                 <?php 
+
+                        $logincheck =Session::get('customer_login');
+                        if($logincheck){
+                               echo '<li><a style="font-weight: bold;" href="wishlist.php">Yêu thích</a> </li>';
+                        }
+
+
+                ?>
                 <li><a style="font-weight: bold;" href="contact.php">Liên hệ</a> </li>
                 <?php 
 
@@ -174,7 +189,7 @@
                         echo '';
                     }else{
 
-                        echo '<li><a href="profile.php">Thông tin cá nhân</a> </li>';
+                        echo '<li><a style="font-weight: bold;" href="profile.php">Thông tin cá nhân</a> </li>';
                     }
     
                 ?>

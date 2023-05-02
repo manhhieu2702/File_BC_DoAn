@@ -21,33 +21,51 @@ class cart
 		$this->fm = new Format();
 	}
 
-	 public function add_to_cart($quantity,$id)
+	 public function add_to_cart($quantity,$product_stock,$id)
 	{
 		$quantity = $this->fm->validation($quantity);
 		$quantity = mysqli_real_escape_string($this->db->link, $quantity); 
+
+		$product_stock = $this->fm->validation($product_stock);
+		$product_stock = mysqli_real_escape_string($this->db->link, $product_stock); 
+
 		$id = mysqli_real_escape_string($this->db->link, $id);
 		$sId= session_id();
 
-		$query ="SELECT * FROM tbl_product WHERE productId='$id'";
-		$result = $this->db->select($query)->fetch_assoc();
-
-		$image= $result["image"];
-		$price= $result["price"];
-		$productName= $result["productName"];
+		
 		
 		$query_cart="SELECT * FROM tbl_cart WHERE productId='$id' AND sId='$sId'";
 		$check_cart =  $this->db->select($query_cart);
+
+		if($quantity <= $product_stock){
 		if($check_cart){
-			$msg="Sản phẩm đã có sẵn trong giỏ hàng";
+
+			$msg="Sản phẩm đã có sẵn trong giỏ hàng !";
 			return $msg;
-		}else{
-		$query_insert = "INSERT INTO tbl_cart(productId,quantity,sId,image,price,productName) VALUES('$id','$quantity','$sId','$image','$price','$productName') ";
+
+			}else{
+
+				$query ="SELECT * FROM tbl_product WHERE productId='$id'";
+				$result = $this->db->select($query)->fetch_assoc();
+
+				$image= $result["image"];
+				$price= $result["price"];
+				$productName= $result["productName"];
+
+			$query_insert = "INSERT INTO tbl_cart(stock,productId,quantity,sId,image,price,productName) VALUES('$product_stock','$id','$quantity','$sId','$image','$price','$productName') ";
 			$insert_cart = $this->db->insert($query_insert); 
 			if($insert_cart){   /*-------------sửa result thành insert_cart ngày 30-4*/
 				header('Location:cart.php');
-			}else{
+				}else{
 				header('Location:404.php');
-			}}
+					}
+				}
+		}else{
+			$msg="Số lượng đặt vượt quá lượng sản phẩm có trong xưởng !";
+			return $msg;
+		}
+
+	
 
 	}
 	public function get_product_cart(){
@@ -57,21 +75,30 @@ class cart
 		$result=$this->db->select($query);
 		return $result;
 	}
-	public function update_quantity_Cart($quantity,$cartId){
+	public function update_quantity_Cart($stock,$quantity,$cartId){
 		$quantity = mysqli_real_escape_string($this->db->link, $quantity); 
+		$stock = mysqli_real_escape_string($this->db->link, $stock);
 		$cartId = mysqli_real_escape_string($this->db->link, $cartId);
+		if($stock >= $quantity){
 
-		$query = "UPDATE tbl_cart SET
+			$query = "UPDATE tbl_cart SET
 			 quantity='$quantity'
 			 WHERE cartId='$cartId' ";
-	 	$result=$this->db->update($query);
-		if($result){
-			$msg="<span class='success'  style='color:green; font-size:18px'>Sản phẩm cập nhật số lượng thành công !!!</span>";
+	 		$result=$this->db->update($query);
+	 		if($result){
+			$msg="<span class='success'  style='color:green; font-size:18px;font-weight: bold; margin-left: 400px'>Sản phẩm cập nhật số lượng thành công !!!</span>";
 			return $msg;
 		}else{
-			$msg="<span class='error' style='color:red; font-size:18px'>Sản phẩm cập nhật số lượng bị lỗi !!!</span>";
+			$msg="<span class='error' style='color:red; font-size:18px;font-weight: bold; margin-left: 400px'>Sản phẩm cập nhật số lượng bị lỗi !!!</span>";
 			return $msg;
 		}
+
+		}else{
+			$msg="<span class='success'  style='color:red; font-size:18px;font-weight: bold; margin-left: 400px'>Số lượng tồn kho không đủ !!!</span>";
+			return $msg;
+		}
+	
+		
 	}
 	public function del_product_cart($cartid){
 

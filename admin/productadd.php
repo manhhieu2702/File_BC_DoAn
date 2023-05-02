@@ -40,6 +40,14 @@
                     </tr>
                     <tr>
                         <td>
+                            <label><span style="color:white; font-weight: bold;font-size: 16px;">Số lượng kho :</span></label>
+                        </td>
+                        <td>
+                            <input style="height: 40px;border-radius:10px ;width: 50px;" type="number" min="1" value="10" name="product_quantity" placeholder="  Nhập số lượng sản phẩm nhập về xưởng..." class="medium" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
                             <label><span style="color:white; font-weight: bold;font-size: 16px;">Danh mục sản phẩm :</span></label> 
                         </td>
                         <td>
@@ -130,7 +138,7 @@
                     <tr>
                         <td></td>
                         <td>
-                            <a href="index.php"><input style="margin-left: 380px; border-radius: 10px;font-weight:bold ; color: white;background-color: red; border:none; width:70px;font-size: 16px;height: 21px; cursor: pointer;"   name="cancel" Value=" Quay lại" /></a>
+                            <a href="productlist.php"><input style="margin-left: 380px; border-radius: 10px;font-weight:bold ; color: white;background-color: red; border:none; width:70px;font-size: 16px;height: 21px; cursor: pointer;"   name="cancel" Value=" Quay lại" /></a>
                             <input style="border-radius: 10px;font-weight:bold ;font-size: 16px; color: white;background-color: blue; border:none;height: 30px;"  type="submit" name="submit" Value="Lưu" />
                         </td>
                     </tr>

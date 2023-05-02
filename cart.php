@@ -6,8 +6,10 @@
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
         $quantity=$_POST['quantity'];
+        $stock=$_POST['stock'];
         $cartId=$_POST['cartId'];
-     $update_quantity_Cart = $ct->update_quantity_Cart($quantity,$cartId);
+     $update_quantity_Cart = $ct->update_quantity_Cart($stock,$quantity,$cartId);
+
     }
 
 
@@ -15,6 +17,7 @@
         
         $cartid = $_GET['cartid'];
         $delCart = $ct->del_product_cart($cartid);
+        echo "<meta http-equiv='refresh' content='0;URL=?id=live'>";
     }
 
 ?>
@@ -30,15 +33,9 @@
     <div class="content">
         <div class="cartoption">
             <div class="cartpage">
-                <h2 style="display: inline;">Giỏ hàng của tôi</h2>
+                <h2 style="display: inline;font-weight: bold;color: #ff7100;;">Giỏ hàng của tôi</h2><br>
                 <br>
-                <?php 
 
-                if(isset($update_quantity_Cart )){
-                    echo $update_quantity_Cart;
-                }
-
-                ?>
                 <?php 
 
                 if(isset($delCart )){
@@ -74,6 +71,7 @@
                         <td style="vertical-align: middle;">
                             <form action="" method="post">
                                 <input type="hidden" name="cartId" value="<?php echo $result['cartId']?>" />
+                                <input type="hidden" name="stock"  value="<?php echo $result['stock']?>" />
                                 <input type="number" name="quantity" min="0" value="<?php echo $result['quantity']?>" />
                                 <input type="submit" name="submit" value="Cập nhật" />
                             </form>
@@ -96,6 +94,14 @@
                     }
                     ?>
                 </table>
+                <?php 
+
+                if(isset($update_quantity_Cart )){
+                    echo $update_quantity_Cart;
+                    
+                }
+
+                ?>
                 <table style="float:right;text-align:left;" width="40%">
                     <tr style="font-size: 20px;">
                         <th style="font-weight: bold;">TỔNG TIỀN GIỎ HÀNG </th>

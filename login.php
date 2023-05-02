@@ -54,7 +54,7 @@
             
                 <p class="note">Nếu bạn quên mật khẩu, chỉ cần nhập email của bạn và nhấp vào <a href="#">đây</a></p>
                 <div class="buttons">
-                    <div><input type="submit" name="login" value="Đăng nhập" class="grey" style=" border: none; background:green ;color:white; height: 35px;font-size: 18px;font-weight:bold;border-radius:5px;"></input></div>
+                    <div><input type="submit" class="buysubmit" name="login" value="Đăng nhập"  style=" border: none; background:green ;color:white; height: 35px;font-size: 18px;font-weight:bold;border-radius:10px;"></input></div>
                 </div>
             </form>
         </div>
@@ -107,7 +107,7 @@
                 </table>
 
                 <div class="search">
-                    <div><input type="submit" name="submit" value="Tạo tài khoản" class="grey" style=" border: none; background:green ;color:white; height: 35px;font-size: 18px;font-weight:bold;border-radius:5px;"></input></div>
+                    <div><input type="submit" class="buysubmit" name="submit" value="Tạo tài khoản"  style=" border: none; background:green ;color:white; height: 35px;font-size: 18px;font-weight:bold;border-radius:5px;"></input></div>
                 </div>
                 <p class="terms">Bằng cách nhấp vào 'Tạo tài khoản', bạn đồng ý với các thông tin trên và<a href="#">
                         &amp;
