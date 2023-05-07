@@ -11,7 +11,8 @@
     if(!isset($_GET['customerid']) || $_GET['customerid'] == NULL){
         echo "<script> Window.Location = 'inbox.php'; </script>";
     }else{
-        $id = $_GET['customerid'];
+        $customerid = $_GET['customerid'];
+       	$madon=$_GET['madon'];
     }
     
 /*    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -48,7 +49,7 @@ $pdf->Write(10,'Địa chỉ : Bắc Sơn- Sóc Sơn- Hà Nội ');
 	
     $ct= new cart();
     $fm= new Format();
-    $print_inbox_cart=$ct->print_product_ordered($id);
+    $print_inbox_cart=$ct->print_product_ordered($customerid,$madon);
 
     if($print_inbox_cart){
         $i=0;

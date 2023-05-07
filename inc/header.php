@@ -102,15 +102,15 @@
                 }
 
                 ?>
-                <div class="login" style="border-radius:7px;">
+                <div class="login" style="border-radius:7px; vertical-align: middle;align-items:center ;" >
 
                     <?php
 
                     $logincheck =Session::get('customer_login');
                     if($logincheck==false){
-                        echo '<a href="login.php" style="font-size: 18px;font-weight: bold;">Đăng nhập</a>';
+                        echo '<a href="login.php" style="font-size: 18px;font-weight: bold;vertical-align: middle;align-items:center ;">Đăng nhập</a>';
                     }else{
-                        echo '<a href="?customer_id='.Session::get('customer_id').'" style="font-size: 18px;font-weight: bold;">Đăng xuất</a>';
+                        echo '<a href="?customer_id='.Session::get('customer_id').'" style="font-size: 18px;font-weight: bold;vertical-align: middle;align-items:center ;">Đăng xuất</a>';
                     }
 
                     ?>

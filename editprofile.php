@@ -35,7 +35,7 @@
     <div class="content">
         <div class="content_top">
             <div class="heading">
-                <h2 align="left" style="font-size: 24px;font-weight: bold;color: blue;">Cập nhật thông tin cá nhân </h2>
+                <h2 align="left" style="font-size: 24px;font-weight: bold;color:  #ff7100;">Cập nhật thông tin cá nhân </h2>
             </div>
             <div class="clear"></div>
         </div>
@@ -84,7 +84,7 @@
                     <td><input style="height:30px;" type="text" name="email" value="<?php echo $result_cus['email'];?>"><td>
                 </tr>
                 <tr>
-                    <td colspan="3"><input type="submit" name="save" value="Cập nhật" class="grey" style="width:150px;height:40px; background-color: blueviolet;font-weight: bold;"></td>
+                    <td colspan="3"><input type="submit" name="save" value="Cập nhật" class="grey" style="width:150px;height:40px; background-color:  #ff7100;font-weight: bold;"></td>
                 </tr>
 
                 <?php 

@@ -224,9 +224,9 @@ class cart
 	 	return $result;
 	}
 
-		public function print_product_ordered($customer_id){
+		public function print_product_ordered($customerid,$madon){
 		$query ="SELECT * FROM tbl_order INNER JOIN tbl_customer ON tbl_order.customer_id = tbl_customer.id
-		WHERE  customer_id='$customer_id'";
+		WHERE  tbl_order.customer_id='$customerid' AND tbl_order.id ='$madon'";
 		$get_product_ordered=$this->db->select($query);
 		return $get_product_ordered;
 	}

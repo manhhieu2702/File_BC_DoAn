@@ -7,7 +7,7 @@
             if($getnewTuong){
                 while($resultTuong = $getnewTuong->fetch_assoc()){
             ?>
-            <div class="listview_1_of_2 images_1_of_2">
+            <div class="listview_1_of_2 images_1_of_2" style="border: 1px solid #ff7100;">
                 <div class="listimg listimg_2_of_1">
                     <a href=""> <img src="admin/uploads/<?php echo $resultTuong['image']?>" alt="" /></a>
                 </div>
@@ -26,7 +26,7 @@
             if($getnewTranh){
                 while($resultTranh = $getnewTranh->fetch_assoc()){
             ?>
-            <div class="listview_1_of_2 images_1_of_2">
+            <div class="listview_1_of_2 images_1_of_2" style="border: 1px solid #ff7100;">
                 <div class="listimg listimg_2_of_1">
                     <a href=""><img src="admin/uploads/<?php echo $resultTranh['image']?>" alt="" /></a>
                 </div>
@@ -52,7 +52,7 @@
                 while($resultCauDoi = $getnewCauDoi->fetch_assoc()){
             ?>
 
-            <div class="listview_1_of_2 images_1_of_2">
+            <div class="listview_1_of_2 images_1_of_2" style="border: 1px solid #ff7100;">
                 <div class="listimg listimg_2_of_1">
                     <a href="details.php"><img src="admin/uploads/<?php echo $resultCauDoi['image']?>" alt="" /></a>
                 </div>
@@ -73,7 +73,7 @@
                 while($resultBan = $getnewBan->fetch_assoc()){
             ?>
 
-            <div class="listview_1_of_2 images_1_of_2">
+            <div class="listview_1_of_2 images_1_of_2" style="border: 1px solid #ff7100;" >
                 <div class="listimg listimg_2_of_1">
                     <a href="details.php"><img src="admin/uploads/<?php echo $resultBan['image']?>" alt="" /></a>
                 </div>

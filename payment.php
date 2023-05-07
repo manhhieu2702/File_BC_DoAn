@@ -43,16 +43,16 @@
             <div class="clear"></div>
         </div>
         <br>
-           <div style="text-align: center;font-weight: bold; border: 3px solid yellowgreen;margin: 0 200px;background: cornsilk; padding: 20px;">
+           <div style="text-align: center;font-weight: bold; border: 1px solid red ;margin: 0 200px;background: cornsilk; padding: 20px;">
             <h3 style="font-size: 20px;text-decoration: underline; ">Hãy chọn phương thức thanh toán :</h3>
             <br>
-            <span style="text-align: center;font-weight: bold; border: 3px solid yellow;padding: 5px; background-color: red;"><a style="color: white;" href="offlinepayment.php">Thanh toán khi nhận hàng.</a></span>
+            <span style="text-align: center;font-weight: bold; border: none;padding: 7px 15px; background-color: red; border-radius: 7px;"><a style="color: white; text-decoration: none;font-size: 18px;" href="offlinepayment.php">Thanh toán khi nhận hàng.</a></span>
             <br>
             <br>
-            <span style="text-align: center;font-weight: bold; border: 3px solid yellow;padding: 5px; background-color: red;"><a style="color: white;" href="onlinepayment.php">Thanh toán qua trực tuyến</a> </span> 
+            <span style="text-align: center;font-weight: bold; border: none;padding: 7px 15px; background-color: red;border-radius: 7px"><a style="color: white;text-decoration: none;font-size: 18px;" href="onlinepayment.php">Thanh toán qua trực tuyến</a> </span> 
             <br>
              <br>
-            <span style="text-align: center;font-weight: bold; border: 3px solid yellow;padding: 5px; background-color: blue;"><a style="color: white;" href="cart.php">Quay lại giỏ hàng</a> </span> 
+            <span style="text-align: center;font-weight: bold; border: none;padding: 7px 15px; background-color: blue;border-radius: 7px"><a style="color: white;text-decoration: none;font-size: 18px;" href="cart.php">Quay lại giỏ hàng</a> </span> 
             <br>
            </div>   
     </div>

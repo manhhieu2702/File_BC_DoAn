@@ -37,7 +37,7 @@
     <div class="content">
         <div class="content_top">
             <div class="heading">
-                <h2 align="left" style="font-size: 24px;font-weight: bold;color: green;">Thông tin cá nhân khách hàng</h2>
+                <h2 align="left" style="font-size: 24px;font-weight: bold;color:  #ff7100;">Thông tin cá nhân khách hàng</h2>
             </div>
             <div class="clear"></div>
         </div>

@@ -18,7 +18,7 @@
             if($product_tuong){
                 while($result=$product_tuong->fetch_assoc()){            
             ?>
-            <div class="grid_1_of_4 images_1_of_4" style="height: 440px ;width: 330px;position: relative;">
+            <div class="grid_1_of_4 images_1_of_4" style="height: 440px ;width: 345px;position: relative;margin: 5px 2px; border: 1px solid #ff7100;">
                 <a href="details.php"><img height="200" src="admin/uploads/<?php echo $result['image'] ?>" alt="" /></a>
                 <h2 style="font-weight: bold;font-size: 16px;"><?php echo $result['productName'] ?></h2>
                 <!-- <p><?php echo $fm->textShorten($result['product_desc'],100) ?></p> -->
@@ -45,7 +45,7 @@
             if($product_tranh){
                 while($result_tranh=$product_tranh->fetch_assoc()){            
             ?>
-            <div class="grid_1_of_4 images_1_of_4" style="height: 440px ;width: 330px;position: relative;">
+            <div class="grid_1_of_4 images_1_of_4" style="height: 440px ;width: 345px;position: relative;margin: 5px 2px; border: 1px solid #ff7100;">
                 <a href="details.php"><img height="200" src="admin/uploads/<?php echo $result_tranh['image'] ?>" alt="" /></a>
                 <h2 style="font-weight: bold;font-size: 16px;"><?php echo $result_tranh['productName'] ?></h2>
                 <p><?php echo $fm->textShorten($result_tranh['product_desc'],100) ?></p>
@@ -72,7 +72,7 @@
             if($product_banghe){
                 while($result_banghe=$product_banghe->fetch_assoc()){            
             ?>
-            <div class="grid_1_of_4 images_1_of_4" style="height: 440px ;width: 330px;position: relative;">
+            <div class="grid_1_of_4 images_1_of_4" style="height: 440px ;width: 345px;position: relative;margin: 5px 2px; border: 1px solid #ff7100;">
                 <a href="details.php"><img height="200" src="admin/uploads/<?php echo $result_banghe['image'] ?>" alt="" /></a>
                 <h2 style="font-weight: bold;font-size: 16px;"><?php echo $result_banghe['productName'] ?></h2>
                 <p><?php echo $fm->textShorten($result_banghe['product_desc'],100) ?></p>

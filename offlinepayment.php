@@ -29,7 +29,7 @@
     }
     .sub_order{
         padding: 10px 50px;
-        font-size: 18px;
+        font-size: 16px;
         color: white;
         border-radius: 8px;
         background: red;
@@ -38,12 +38,13 @@
     }
 </style>
 <form action="" method="POST">
-<div class="main">
+<div class="bod" style="font-weight: bold;font-size: 16px;">
+<div class="main" >
     <div class="content">
         <div class="section group">
 
             <div class="heading">
-                <h2 align="left" style="font-size: 22px;font-weight: bold;color: gray;">Phương thức thanh toán khi nhận hàng</h2>
+                <h2 align="left" style="font-size: 24px;font-weight: bold;color: gray;">Phương thức thanh toán khi nhận hàng</h2>
             </div>
             <div class="clear"></div>
             <div class="box_left">
@@ -64,14 +65,14 @@
                 }
 
                 ?>
-                <table class="tblone">
+                <table class="tblone" style="font-size: 16px;">
                     <tr >
-                        <th style="font-size: 14px;" width="5%">ID</th>
-                        <th style="font-size: 14px;" width="35%">Sản Phẩm</th>
-                        <th style="font-size: 14px;" width="15%">Giá</th>
-                        <th style="font-size: 14px;" width="20%">Số lượng</th>
-                        <th style="font-size: 14px;" width="20%">Vận chuyển</th>
-                        <th style="font-size: 14px;" width="20%">Tổng </th>
+                        <th style="font-size: 16px;" width="5%">ID</th>
+                        <th style="font-size: 16px;" width="35%">Sản Phẩm</th>
+                        <th style="font-size: 16px;" width="15%">Giá</th>
+                        <th style="font-size: 16px;" width="20%">Số lượng</th>
+                        <th style="font-size: 16px;" width="20%">Vận chuyển</th>
+                        <th style="font-size: 16px;" width="20%">Tổng </th>
                     </tr>
 
                     <?php 
@@ -85,15 +86,15 @@
                             $i++;
                     ?>
                     <tr>
-                        <td style="font-size: 14px;"><?php echo $i?></td>
-                        <td style="font-size: 14px;"><?php echo $result['productName']?></td>
-                        <td style="font-size: 14px;"><?php echo $fm->format_currency($result['price']) .' '.'VND'?></td>
+                        <td style="font-size: 16px;"><?php echo $i?></td>
+                        <td style="font-size: 16px;"><?php echo $result['productName']?></td>
+                        <td style="font-size: 16px;"><?php echo $fm->format_currency($result['price']) .' '.'VND'?></td>
                         <td>
                                 <?php echo $result['quantity']?>
 
                         </td>
-                        <td style="font-size: 14px;"><?php echo $fm->format_currency($result['price']*0.01) .' '.'VND'?></td>
-                        <td style="font-size: 14px;">
+                        <td style="font-size: 16px;"><?php echo $fm->format_currency($result['price']*0.01) .' '.'VND'?></td>
+                        <td style="font-size: 16px;">
                             <?php 
                                 $total= $result['price'] * $result['quantity'] +$result['price']*0.01;
                                 echo $fm->format_currency($total) .' '.'VND';
@@ -111,8 +112,8 @@
                 </table>
                 <table style="float:right;text-align:left;margin: 10px 0;" width="40%">
                     <tr>
-                        <th style="font-size: 14px; font-weight: bold;">TỔNG THANH TOÁN </th>
-                        <td style="font-size: 14px;">
+                        <th style="font-size: 16px; font-weight: bold;color: red;">TỔNG THANH TOÁN </th>
+                        <td style="font-size: 16px;">
                             <?php 
 
                             echo $fm->format_currency($subtotal) .' '.'VND' ;
@@ -176,6 +177,7 @@
     </div>
     <br>
     <center><a href="?orderid=order" class="sub_order">ĐẶT HÀNG</a></center><br><br>
+</div>
 </div>
 </form>
     <?php

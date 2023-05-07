@@ -50,17 +50,17 @@
             ?>
             <div class="cont-desc span_1_of_2">
                 <div class="grid images_3_of_2">
-                    <img src="admin/uploads/<?php echo $result_details['image'] ?>" alt="" />
+                    <img style="height: 400px; margin: 1px;" src="admin/uploads/<?php echo $result_details['image'] ?>" alt="" />
                 </div>
                 <div class="desc span_3_of_2">
-                    <h2 style="font-weight: bold;"><?php echo $result_details['productName'] ?></h2>
+                    <h2 style="font-weight: bold;font-size: 16px;"><?php echo $result_details['productName'] ?></h2>
                 <h4 style="font-weight: bold; color: black;font-size: 16px;"><?php echo $fm->textShorten($result_details['product_desc'],150) ?></h4>
 
                     <div class="price">
-                        <p>Số lượng kho có : <span><?php echo $result_details['product_quantity'] .' '.' Sản phẩm'?></span></p>
-                        <p>Giá bán : <span><?php echo $fm->format_currency($result_details['price']) .' '.'VND'?></span></p>
-                        <p>Danh mục : <span><?php echo $result_details['catName'] ?></span></p>
-                        <p>Xưởng sản xuất : <span><?php echo $result_details['brandName'] ?></span></p>
+                        <p style="font-size: 14px;font-weight: bold;color: #ff7100;">Số lượng kho có : <span style="font-size: 15px;font-weight: bold;"><?php echo $result_details['product_quantity'] .' '.' Sản phẩm'?></span></p>
+                        <p style="font-size: 14px;font-weight: bold;color: #ff7100;">Giá bán : <span style="font-size: 15px;font-weight: bold;"><?php echo $fm->format_currency($result_details['price']) .' '.'VND'?></span></p>
+                        <p style="font-size: 14px;font-weight: bold; color: #ff7100;">Danh mục : <span style="font-size: 15px;font-weight: bold;"><?php echo $result_details['catName'] ?></span></p>
+                        <p style="font-size: 14px;font-weight: bold; color: #ff7100;">Xưởng sản xuất : <span style="font-size: 15px;font-weight: bold;"><?php echo $result_details['brandName'] ?></span></p>
                     </div>
                     <div class="add-cart">
                         <form action="" method="post" >
@@ -171,7 +171,7 @@
                 </div>
 
         </div>
-            <span style="color: #ff7100;font-weight: bold;font-size: 16px;">Đánh giá sản phẩm</span>
+            <span style="color: #ff7100;font-weight: bold;font-size: 16px; margin-left: 20px;">Đánh giá sản phẩm</span>
             <div class="binhluan">
                 <div class="row">
                     <div class="col-md-8">
@@ -181,7 +181,7 @@
                                     echo $insert_binhluan;
                                 }
                             ?>
-                        <form action="" method="POST">
+                        <form action="" method="POST" style="margin-left: 20px;">
                             <p><input type="hidden" value="<?php echo $id?>" name="product_id_binhluan" /></p>
 <input style="max-width: 400px;" type="text" placeholder=" Điền tên người đánh giá" class="form-control" name="tennguoibinhluan">
 <br>
