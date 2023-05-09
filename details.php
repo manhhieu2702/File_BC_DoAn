@@ -71,7 +71,7 @@
                             if($result_details['product_quantity']>0){
                             ?>
 
-                            <input type="submit" class="buysubmit" name="submit" value="Đặt hàng"
+                            <input type="submit" class="buysubmit" name="submit" value="Mua hàng"
                                 style="background-color:green; margin-left: 10px;" />
                             <?php 
 
@@ -117,7 +117,7 @@
                             $login_check =Session::get('customer_login');
                             if($login_check){
                                     
-                                    echo '<input type="submit" class="buysubmit" name="wishlist" value="Thêm vào Yêu thích" style="background-color:green; margin : 0px 5px" />';
+                                    echo '<input type="submit" class="buysubmit" name="wishlist" value="Thêm vào Wishlist" style="background-color:green; margin : 0px 5px" />';
                                 }else{
                                     echo ' ';
                                 }

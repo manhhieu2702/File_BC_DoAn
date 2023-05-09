@@ -107,7 +107,7 @@
                 </table>
 
                 <div class="search">
-                    <div><input type="submit" class="buysubmit" name="submit" value="Tạo tài khoản"  style=" border: none; background:green ;color:white; height: 35px;font-size: 18px;font-weight:bold;border-radius:5px;"></input></div>
+                    <div><input type="submit" class="buysubmit" name="submit" value="Đăng kí"  style=" border: none; background:green ;color:white; height: 35px;font-size: 18px;font-weight:bold;border-radius:5px;"></input></div>
                     <span style="color: blueviolet; font-size: 16px;font-weight: bold; margin-left: 150px;"> Lưu ý : địa chỉ được đăng kí sẽ là địa chỉ giao nhận hàng !!! </span>
                 </div>
                 <p class="terms">Bằng cách nhấp vào 'Tạo tài khoản', bạn đồng ý với các thông tin trên và<a href="#">
