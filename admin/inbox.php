@@ -75,7 +75,7 @@ $ct= new cart();
                     <tr class="odd gradeX">
                         <td style="vertical-align: middle;"><?php echo $i?></td>
                         <td style="vertical-align: middle;"><?php echo $fm->formatDate($result['date_order'])?></td>
-                        <td style="vertical-align: middle;"><?php echo $result['id'] ?></td>
+                        <td style="vertical-align: middle;"><?php echo $result['order_code'] ?></td>
                         <td style="vertical-align: middle;"><?php echo $result['productName'] ?></td>
                         <td style="vertical-align: middle;"><?php echo $result['quantity'] ?></td>
                         <td style="vertical-align: middle;"><?php echo $fm->format_currency($result['price']) .' '.'VNĐ'?></td>
@@ -106,7 +106,7 @@ $ct= new cart();
 
 
                         </td>
-                        <td style="vertical-align: middle; padding: 12px 0px"> <a style="border: none;color: white;background-color: blue; padding: 5px 10px; border-radius: 5px;" href="indonhang.php?customerid=<?php echo $result['customer_id'] ?>&madon=<?php echo $result['id'] ?>"> In đơn </a></td>
+                        <td style="vertical-align: middle; padding: 12px 0px"> <a style="border: none;color: white;background-color: blue; padding: 5px 10px; border-radius: 5px;" href="indonhang.php?customerid=<?php echo $result['customer_id'] ?>&madon=<?php echo $result['order_code'] ?>"> In đơn </a></td>
                     </tr>
 
                     <?php 

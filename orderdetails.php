@@ -20,7 +20,7 @@
     <div class="content">
         <div class="cartoption">
             <div class="cartpage">
-                <h2 style="display: inline;"width="500px">Đơn hàng đã đặt </h2>
+                <h2 style="display: inline;color:green" width="500px;">Đơn hàng đã đặt </h2>
                 <br>
                 <br>
 
@@ -74,12 +74,12 @@
                             }elseif($result['status']=='1'){
                             ?>
 
-                            <a style="color: green;" href="?confirmid=<?php echo $customer_id ?>&price=<?php echo $result['price'] ?>&time=<?php echo $result['date_order'] ?> ">Đang giao hàng </a>
+                            <a style="color: green;" href="?confirmid=<?php echo $customer_id ?>&price=<?php echo $result['price'] ?>&time=<?php echo $result['date_order'] ?> ">Nhận hàng</a>
 
 
                             <?php
                             }else{
-                                echo 'Nhận hàng thành công';
+                                echo 'Nhận hàng thành công !';
                             }
                             ?>
                         </td>

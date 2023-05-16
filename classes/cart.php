@@ -142,6 +142,10 @@ class cart
 		$sId=session_id();
 		$query ="SELECT * FROM tbl_cart WHERE sId='$sId'";
 		$getproduct_order=$this->db->select($query);
+		$order_code=rand(0000,9999);
+		//insert vao don hang tbl_placed
+		$query_placed ="INSERT INTO tbl_placed(customer_id,order_code,status) VALUES('$customer_id','$order_code','0')";
+		$insert_placed=$this->db->insert($query_placed);
 		if($getproduct_order){
 			while($result= $getproduct_order->fetch_assoc()){
 				$productId=$result['productId'];
@@ -151,12 +155,12 @@ class cart
 				$image=$result['image'];
 				$customer_id=$customer_id;
 
-
-			$query_order = "INSERT INTO tbl_order(productId,productName,quantity,price,image,customer_id) VALUES('$productId','$productName','$quantity','$price','$image','$customer_id') ";
+			$query_order = "INSERT INTO tbl_order(order_code,productId,productName,quantity,price,image,customer_id) VALUES('$order_code','$productId','$productName','$quantity','$price','$image','$customer_id') ";
 			$insert_order = $this->db->insert($query_order);
 			}
 		}
 	}
+
 	public function getAmountPrice($customer_id){
 
 		$query ="SELECT price,quantity FROM tbl_order WHERE customer_id='$customer_id'";
@@ -226,7 +230,7 @@ class cart
 
 		public function print_product_ordered($customerid,$madon){
 		$query ="SELECT * FROM tbl_order INNER JOIN tbl_customer ON tbl_order.customer_id = tbl_customer.id
-		WHERE  tbl_order.customer_id='$customerid' AND tbl_order.id ='$madon'";
+		WHERE  tbl_order.customer_id='$customerid' AND tbl_order.order_code ='$madon'";
 		$get_product_ordered=$this->db->select($query);
 		return $get_product_ordered;
 	}

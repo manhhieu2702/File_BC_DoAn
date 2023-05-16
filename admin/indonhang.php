@@ -61,7 +61,7 @@ $pdf->Write(10,'Địa chỉ : Bắc Sơn- Sóc Sơn- Hà Nội ');
 
 	$pdf->Cell($width_cell[0],10,$i,1,0,'C',$fill);
 	$pdf->Cell($width_cell[1],10,$result['date_order'],1,0,'C',$fill);
-	$pdf->Cell($width_cell[2],10,$result['id'],1,0,'C',$fill);
+	$pdf->Cell($width_cell[2],10,$madon,1,0,'C',$fill);
 	$pdf->Cell($width_cell[3],10,$result['productName'],1,0,'C',$fill);
 	$pdf->Cell($width_cell[4],10,$result['quantity'],1,0,'C',$fill);
 	$pdf->Cell($width_cell[5],10,number_format($result['price'] ),1,0,'C',$fill);

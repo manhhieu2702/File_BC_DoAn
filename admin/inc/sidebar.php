@@ -26,14 +26,6 @@
                         <li><a style="background-color: #d19405;" href="productlist.php">Danh sách sản phẩm</a> </li>
                     </ul>
                 </li>
-                <li><a class="menuitem">Tùy chọn website</a>
-                    <ul class="submenu">
-                        <li><a style="background-color: #d19405;" href="titleslogan.php">Tiêu đề và khẩu hiệu</a></li>
-                        <li><a style="background-color: #d19405;" href="social.php">Phương tiện truyền thông</a></li>
-                        <li><a style="background-color: #d19405;" href="copyright.php">Bản quyền</a></li>
-
-                    </ul>
-                </li>
             </ul>
         </div>
     </div>
